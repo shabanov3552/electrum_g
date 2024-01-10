@@ -4986,25 +4986,185 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 
 .catalog-btn {
   height: 100%;
-  width: 100px;
+  width: 108px;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #fff;
-  border-right: 1px solid #141414;
+  -webkit-transition: width 0.3s ease 0s;
+  -o-transition: width 0.3s ease 0s;
+  transition: width 0.3s ease 0s;
   cursor: pointer;
 }
 
-.catalog-btn:hover {
-  width: 120px;
+.catalog-btn::before,
+.catalog-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.catalog-btn::after {
+  width: 23px;
+  background: url(../img/fb/cat-border.svg) center center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-animation: catBtnAfterAnimation 10.2s infinite linear 3s;
+          animation: catBtnAfterAnimation 10.2s infinite linear 3s;
+}
+
+@-webkit-keyframes catBtnAfterAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  30% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  50% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes catBtnAfterAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  30% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  50% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.catalog-btn::before {
+  width: 25px;
+  background: url(../img/fb/cat-border-hv.svg) center center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+          clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  -webkit-animation: catBtnBeforeAnimation 10.2s infinite linear 3s;
+          animation: catBtnBeforeAnimation 10.2s infinite linear 3s;
+}
+
+@-webkit-keyframes catBtnBeforeAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  30% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+}
+
+@keyframes catBtnBeforeAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  30% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+}
+
+.catalog-btn:hover .catalog-btn__logo_anim,
+.catalog-btn:hover .catalog-btn__title_anim,
+.catalog-btn:hover::after,
+.catalog-btn:hover::before {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.catalog-btn:hover::after {
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.catalog-btn:hover::before {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.catalog-btn:hover .catalog-btn__title_anim {
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 }
 
 .catalog-btn__logo {
   position: absolute;
+  z-index: 5;
   top: -65px;
   left: 19px;
-  width: 62px;
-  height: 58px;
+  width: 53px;
+  height: 49px;
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
           transform: rotate(-180deg);
@@ -5013,8 +5173,78 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   transition: all 0.3s ease 0s;
 }
 
+.catalog-btn__logo:hover .catalog-btn__logo_anim {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
 .catalog-btn__logo img {
   max-width: 100%;
+  position: absolute;
+}
+
+.catalog-btn__logo_anim {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+          clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  -webkit-animation: catLogoAnimation 10.2s infinite linear 3s;
+          animation: catLogoAnimation 10.2s infinite linear 3s;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+@-webkit-keyframes catLogoAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  5% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  75% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+}
+
+@keyframes catLogoAnimation {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  5% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  75% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+  }
 }
 
 .catalog-btn__link {
@@ -5029,6 +5259,7 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .catalog-btn__title {
@@ -5036,10 +5267,86 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 32px;
+  line-height: 36px;
   font-family: "heliosextblack";
-  color: #141414;
+  color: #00459C;
+}
+
+.catalog-btn__title_anim {
+  color: #419AFF;
+  position: absolute;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+          clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  -webkit-animation: catTitleAnimation 10.2s infinite linear 3s;
+          animation: catTitleAnimation 10.2s infinite linear 3s;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+@-webkit-keyframes catTitleAnimation {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  7% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  20% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  60% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  70% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+}
+
+@keyframes catTitleAnimation {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  7% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  20% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  60% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  70% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
+
+  100% {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+            clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+  }
 }
 
 .header._scroll .catalog-btn__logo {
@@ -5294,6 +5601,10 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   display: -ms-flexbox;
   display: flex;
   margin: 0px 0px 40px 0px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  row-gap: 25px;
 }
 
 .contacts-footer__item {
@@ -5383,6 +5694,35 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 .copyright__item:hover path,
 .copyright__item:hover rect {
   fill: #004ea6;
+}
+
+.opening-hours {
+  color: #fff;
+}
+
+.opening-hours__row:first-child {
+  margin-bottom: 5px;
+}
+
+.opening-hours__row span:first-child {
+  margin-right: 40px;
+}
+
+.contacts-footer__item_hours {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts-footer__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
 }
 
 :root {
@@ -6133,6 +6473,9 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   grid-template-columns: 1fr 781px;
   gap: 50px;
   margin-bottom: 120px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 .about-chunk__col {
@@ -11016,12 +11359,6 @@ html *::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 939.98px) {
-  .catalog-btn {
-    -webkit-transition: width 0.3s ease 0s;
-    -o-transition: width 0.3s ease 0s;
-    transition: width 0.3s ease 0s;
-  }
-
   .shop-list__total-right {
     margin-right: 200px;
   }
@@ -11234,6 +11571,9 @@ html *::-webkit-scrollbar-thumb {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
   }
 
   .menu-footer__body {
@@ -11506,11 +11846,7 @@ html *::-webkit-scrollbar-thumb {
   }
 
   .catalog-btn {
-    width: 80px;
-  }
-
-  .catalog-btn:hover {
-    width: 100px;
+    width: 90px;
   }
 
   .catalog-btn__logo {
@@ -11750,16 +12086,8 @@ html *::-webkit-scrollbar-thumb {
     margin: 0px 68px 0px 0px;
   }
 
-  .catalog-btn {
-    width: 60px;
-  }
-
-  .catalog-btn:hover {
-    width: 80px;
-  }
-
   .footer {
-    padding: 57px 102px 30px 24px;
+    padding: 57px 102px 30px 70px;
   }
 
   .contacts-footer__item {
@@ -11795,7 +12123,7 @@ html *::-webkit-scrollbar-thumb {
   }
 
   .page {
-    padding: 0px 102px 0px 24px;
+    padding: 0px 102px 0px 40px;
   }
 }
 
@@ -11892,14 +12220,6 @@ html *::-webkit-scrollbar-thumb {
 
   .menu__list {
     max-width: 400px;
-  }
-
-  .catalog-btn {
-    width: 80px;
-  }
-
-  .catalog-btn:hover {
-    width: 100px;
   }
 
   .footer {
@@ -13081,12 +13401,6 @@ html *::-webkit-scrollbar-thumb {
 
   .feedback__link:first-child {
     margin: 0px 0px 5px 0px;
-  }
-
-  .catalog-btn {
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
   }
 
   .footer__contacts {
@@ -15473,11 +15787,6 @@ html *::-webkit-scrollbar-thumb {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
-  }
-
-  .catalog-btn__logo {
-    width: 45px;
-    height: auto;
   }
 }
 

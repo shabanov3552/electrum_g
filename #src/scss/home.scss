@@ -1313,6 +1313,7 @@
 	grid-template-columns: 1fr 781px;
 	gap: 50px;
 	margin-bottom: 120px;
+	align-items: end;
 
 	@media (max-width:1570px) {
 		grid-template-columns: 1fr 398px;

@@ -636,75 +636,182 @@ html._touch .menu__list>.menu__link_dropdown._active .menu__sub-list {
 //====================================================================================================
 .catalog-btn {
 	height: 100%;
-	width: 100px;
+	width: 108px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: #fff;
-	border-right: 1px solid #141414;
+	transition: width 0.3s ease 0s;
 	cursor: pointer;
 
-	&:hover {
-		width: 120px;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		transition: all .3s linear;
 	}
+
+	&::after {
+		width: 23px;
+		background: url(../img/fb/cat-border.svg) center center / cover no-repeat;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		animation: catBtnAfterAnimation 10.20s infinite linear 3s;
+	}
+
+	@keyframes catBtnAfterAnimation {
+
+		// 3s delay
+		0% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+
+		// 2.10s anima
+		30% {
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		}
+
+		// 3s delay
+		50% {
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		}
+
+		// 2.10s anima
+		80% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+
+		// 3s delay
+		100% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+	}
+
+	&::before {
+		width: 25px;
+		background: url(../img/fb/cat-border-hv.svg) center center / cover no-repeat;
+		clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+		animation: catBtnBeforeAnimation 10.20s infinite linear 3s;
+	}
+
+	@keyframes catBtnBeforeAnimation {
+
+		// 3s delay
+		0% {
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+		}
+
+		// 2.10s anima
+		30% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+
+		// 3s delay
+		50% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+
+		// 2.10s anima
+		80% {
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+		}
+
+		// 3s delay
+		100% {
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+		}
+	}
+
+	&:hover {
+
+		.catalog-btn__logo_anim,
+		.catalog-btn__title_anim,
+		&::after,
+		&::before {
+			animation: none;
+		}
+
+		&::after {
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		}
+
+		&::before {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+
+		.catalog-btn__title_anim {
+			clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+		}
+	}
+
+
 
 	@media (max-width: 1440px) {
-		width: 80px;
-
-		&:hover {
-			width: 100px;
-		}
-	}
-
-	@media (max-width: 1366px) {
-		width: 60px;
-
-		&:hover {
-			width: 80px;
-		}
-	}
-
-	@media (max-width: 1280px) {
-		width: 80px;
-
-		&:hover {
-			width: 100px;
-		}
-	}
-
-	@media (min-width: $md3+px) {
-		transition: width 0.3s ease 0s;
-		// opacity: 0;
-	}
-
-	@media (max-width: $md3+px) {
-		transition: all 0.3s ease 0s;
+		width: 90px;
 	}
 
 	@media (max-width: $md4+px) {
 		display: none;
 	}
 
+
+	// .catalog-btn__logo
+
 	&__logo {
 		position: absolute;
+		z-index: 5;
 		top: -65px;
 		left: 19px;
-		width: 62px;
-		height: 58px;
+		width: 53px;
+		height: 49px;
 		transform: rotate(-180deg);
 		transition: all 0.3s ease 0s;
 
+		&:hover {
+			.catalog-btn__logo_anim {
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+
 		img {
 			max-width: 100%;
+			position: absolute;
 		}
 
 		@media (max-width: 1440px) {
 			left: 8px;
 		}
 
-		@media (max-width: 1366px) and (min-width: 1280px) {
-			width: 45px;
-			height: auto;
+		// .catalog-btn__logo_anim
+
+		&_anim {
+			clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+			animation: catLogoAnimation 10.20s infinite linear 3s;
+			transition: all .1s linear;
+
+			@keyframes catLogoAnimation {
+				0% {
+					clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+				}
+
+				5% {
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				}
+
+				75% {
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				}
+
+				80% {
+					clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+				}
+
+				100% {
+					clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+				}
+			}
 		}
 	}
 
@@ -714,6 +821,7 @@ html._touch .menu__list>.menu__link_dropdown._active .menu__sub-list {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: relative;
 
 		@media (max-width: $md4+px) {
 			width: auto;
@@ -721,13 +829,16 @@ html._touch .menu__list>.menu__link_dropdown._active .menu__sub-list {
 		}
 	}
 
+
+	// .catalog-btn__title
+
 	&__title {
 		display: inline-block;
 		transform: rotate(-90deg);
-		font-size: 24px;
-		line-height: 29px;
+		font-size: 32px;
+		line-height: 36px;
 		font-family: "heliosextblack";
-		color: #141414;
+		color: #00459C;
 
 		@media (max-width: $md4+px) {
 			transform: rotate(0deg);
@@ -737,6 +848,42 @@ html._touch .menu__list>.menu__link_dropdown._active .menu__sub-list {
 			font-weight: 600;
 			color: #828282;
 			cursor: pointer;
+		}
+
+		// .catalog-btn__title_anim
+
+		&_anim {
+			color: #419AFF;
+			position: absolute;
+			clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+			animation: catTitleAnimation 10.20s infinite linear 3s;
+			transition: all .3s linear;
+
+			@keyframes catTitleAnimation {
+				0% {
+					clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+				}
+
+				7% {
+					clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+				}
+
+				20% {
+					clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+				}
+
+				60% {
+					clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+				}
+
+				70% {
+					clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+				}
+
+				100% {
+					clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+				}
+			}
 		}
 	}
 }
