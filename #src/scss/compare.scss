@@ -1,0 +1,267 @@
+//====================================================================================================
+.compare {
+	&__title {
+		margin: 0px 0px 40px 0px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__btns {
+		margin: 0px 0px 78px 0px;
+		display: block;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #828282;
+		display: flex;
+		overflow-x: auto;
+		white-space: nowrap;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+		@media (max-width: $md4+px) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@media (max-width: $md5+px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__btn-all {
+		margin: 0px 40px 0px 0px;
+		cursor: pointer;
+		color: #828282;
+		&._active {
+			color: #004ea6;
+			border-bottom: 2px solid #004ea6;
+		}
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 0px 0px;
+		}
+		@media (max-width: $md5+px) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__btn-different {
+		cursor: pointer;
+		color: #828282;
+		&._active {
+			color: #004ea6;
+			border-bottom: 2px solid #004ea6;
+		}
+	}
+
+	&__content {
+		display: flex;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__parametrs {
+		flex: 0 0 380px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		@media (max-width: 1200px) {
+			flex: 0 0 280px;
+		}
+		@media (max-width: $md3+px) {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+	}
+
+	&__parametr {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 600;
+		padding: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		&:first-child {
+			height: 332px;
+			@media (max-width: 1200px) {
+				height: 232px;
+			}
+		}
+		&:nth-child(even) {
+			background-color: #f8f8f8;
+		}
+		&:nth-child(2) {
+			height: 120px;
+		}
+		&:nth-child(3) {
+			height: 100px;
+		}
+		@media (max-width: 1280px) {
+			padding: 10px;
+		}
+		@media (max-width: $md3+px) {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 12px;
+			&:first-child {
+				height: 260px;
+			}
+			&:nth-child(2) {
+				height: 121px;
+			}
+			&:not(:first-child) {
+				height: 73px;
+			}
+		}
+	}
+
+	&__row {
+		min-width: 0;
+		display: flex;
+		flex: 1 1 auto;
+	}
+
+	&__card {
+	}
+}
+
+.card-compare {
+	border: 1px solid #e0e0e0;
+	padding: 22px 40px;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
+	color: #141414;
+	display: flex;
+	flex-direction: column;
+	@media (max-width: 1280px) {
+		padding: 15px 20px;
+	}
+	@media (max-width: $md3+px) {
+		padding: 15px 10px;
+	}
+	&__top {
+		margin: 0px 0px 20px 0px;
+
+		@media (max-width: 1200px) {
+			order: 1;
+		}
+		@media (max-width: $md3+px) {
+			position: sticky;
+			top: 0;
+		}
+	}
+
+	&__image {
+		margin: 0px 0px 20px 0px;
+		display: flex;
+		justify-content: center;
+		height: 217px;
+		img {
+			max-width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		@media (max-width: 1200px) {
+			height: 110px;
+		}
+	}
+
+	&__btn-add-basket {
+		display: inline-block;
+		font-size: 18px;
+		line-height: 24px;
+		color: #fff;
+		font-weight: 400;
+		background-color: #004ea6;
+		border-radius: 6px;
+		padding: 13px 0px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__name {
+		padding: 20px 0;
+		height: 120px;
+		overflow: hidden;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+		@media (max-width: 1200px) {
+			order: 3;
+		}
+		@media (max-width: $md3+px) {
+			display: flex;
+			align-items: flex-start;
+			height: 121px;
+			overflow: hidden;
+		}
+	}
+
+	&__param {
+		@media (max-width: 1200px) {
+			order: 4;
+		}
+	}
+
+	&__price {
+		font-size: 24px;
+		line-height: 30px;
+		color: #004ea6;
+		padding: 20px 0px;
+		height: 100px;
+		@media (max-width: $md3+px) {
+			font-size: 18px;
+			line-height: 24px;
+			height: 100px;
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+
+	&__item {
+		padding: 20px 0px;
+		display: flex;
+		align-items: center;
+		@media (max-width: 1280px) {
+			padding: 10px 0px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			line-height: 16px;
+			height: 73px;
+			align-items: flex-end;
+		}
+	}
+
+	&__btn-delete {
+		font-size: 16px;
+		line-height: 18px;
+		color: #eb5757;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			margin: 0px 10px 0px 0px;
+		}
+		@media (max-width: 1200px) {
+			order: 2;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+}
+.swiper-scrollbar-drag {
+	cursor: pointer;
+	background-color: rgba(20, 20, 20, 0.7);
+	height: 4px;
+	border-radius: 6px;
+}
+.swiper-scrollbar {
+	margin: 0px 0px 30px 0px;
+}

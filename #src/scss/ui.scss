@@ -1,0 +1,873 @@
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+.card {
+	border: 1px solid #e0e0e0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 22px 46px;
+	min-height: 100%;
+	transition: border 0.3s ease 0s;
+	&:hover {
+		border: 1px solid #1d336b;
+		.card__add-basket {
+			background-color: #1d336b;
+		}
+	}
+	@media (max-width: 1280px) {
+		padding: 22px 13px;
+	}
+	@media (max-width: 940px) {
+		padding: 22px 20px;
+	}
+	@media (max-width: $md5+px) {
+		padding: 10px;
+	}
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0px 0px 10px 0px;
+		height: 220px;
+		flex: 0 0 auto;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__center {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+	&__labels {
+		display: flex;
+		margin: 0px 0px 5px 0px;
+		flex-wrap: wrap;
+		:not(:last-child) {
+			margin: 0px 20px 5px 0px;
+			@media (max-width: 850px) {
+				margin: 0px 5px 5px 0px;
+			}
+		}
+		@media (max-width: 390px) {
+			flex-wrap: wrap;
+		}
+	}
+	&__available {
+		margin: 0px 0px 10px 3px;
+	}
+	&__title {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #141414;
+		margin: 0px 0px 10px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		@media (max-width: $md5+px) {
+			word-break: break-all;
+		}
+	}
+	&__article {
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #141414;
+		margin: 0px 0px 10px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 12px;
+			line-height: 12px;
+		}
+	}
+	&__artic {
+		color: #828282;
+		margin: 0px 5px 0px 0px;
+	}
+	&__bottom {
+	}
+	&__price {
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 600;
+		color: #141414;
+		margin: 0px 0px 10px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+	}
+	&__old-price {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #828282;
+		text-decoration: line-through;
+		margin: 0px 0px 10px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	&__btns {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 400px) {
+			justify-content: center;
+		}
+	}
+	&__add-basket {
+		display: inline-block;
+		font-size: 18px;
+		line-height: 24px;
+		color: #fff;
+		font-weight: 400;
+		background-color: #004ea6;
+		border-radius: 6px;
+		padding: 13px 0px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin: 0px 0px 10px 0px;
+		// @media (max-width: 860px) {
+		// 	order: 1;
+		// }
+		@media (max-width: $md4+px) {
+			font-size: 14px;
+			line-height: 16px;
+			padding: 10px 0px;
+			margin: 0px 0px 12px 0px;
+		}
+	}
+	&__favorites {
+		font-size: 16px;
+		line-height: 18px;
+		color: #004ea6;
+		font-weight: 400;
+		padding: 0px 0px 0px 0px;
+		svg {
+			margin: 0px 5px 0px 0px;
+			path {
+				transition: all 0.3s ease 0s;
+				fill: #004ea6;
+			}
+		}
+		&:hover {
+			color: #1d336b;
+			path {
+				fill: #1d336b;
+			}
+		}
+		&.active {
+			color: #828282;
+			padding-left: 27px;
+			position: relative;
+			svg {
+				display: none;
+			}
+			&::before {
+				content: "";
+				display: block;
+				width: 18px;
+				height: 16px;
+				background: url(../img/icons/favorites_del.svg) top left no-repeat;
+				background-size: contain;
+				position: absolute;
+				left: 0px;
+			}
+		}
+		@media (max-width: 860px) {
+			font-size: 0;
+			order: 3;
+			padding: 0px 0px 0px 0px;
+			margin: 0px 15px 0px 0px;
+		}
+	}
+	&__compare {
+		font-size: 16px;
+		line-height: 18px;
+		color: #004ea6;
+		font-weight: 400;
+		padding: 0px 0px 0px 0px;
+		svg {
+			margin: 0px 5px 0px 0px;
+			path {
+				transition: all 0.3s ease 0s;
+				fill: #004ea6;
+			}
+		}
+		&:hover {
+			color: #1d336b;
+			path {
+				fill: #1d336b;
+			}
+		}
+		&.active {
+			color: #eb5757;
+			padding-left: 27px;
+			position: relative;
+			height: 22px;
+			padding-top: 4px;
+			svg {
+				display: none;
+			}
+			&::before {
+				content: "";
+				display: block;
+				width: 18px;
+				height: 16px;
+				background: url(../img/icons/icon_delete.svg) top left no-repeat;
+				background-size: contain;
+				position: absolute;
+				left: 0px;
+			}
+		}
+		@media (max-width: 860px) {
+			font-size: 0;
+			order: 4;
+			padding: 0px 0px 0px 0px;
+		}
+	}
+	&__bye {
+		font-size: 16px;
+		line-height: 18px;
+		color: #004ea6;
+		font-weight: 400;
+		margin: 22px 0px 0px 0px;
+		display: flex;
+		justify-content: center;
+		flex: 1 1 100%;
+		svg {
+			margin: 0px 10px 0px 0px;
+			path {
+				transition: all 0.3s ease 0s;
+				fill: #004ea6;
+			}
+		}
+		&:hover {
+			color: #1d336b;
+			path {
+				fill: #1d336b;
+			}
+		}
+		@media (max-width: 860px) {
+			order: 2;
+			margin: 0px 0px 0px 0px;
+			flex: 1 1 50%;
+			justify-content: space-between;
+			font-size: 12px;
+			line-height: 12px;
+		}
+		@media (max-width: 400px) {
+			flex: 1 1 100%;
+			justify-content: center;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+}
+.label {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 5px 12px;
+	width: 51px;
+	height: 24px;
+	color: #fff;
+	@media (max-width: $md4+px) {
+		font-size: 10px;
+		padding: 2px 8px;
+		height: 18px;
+	}
+}
+.label-hit {
+	background-color: #409aff;
+	width: 51px;
+	@media (max-width: $md4+px) {
+		width: 35px;
+	}
+}
+.label-stock {
+	background-color: #004ea6;
+	width: 72px;
+	@media (max-width: $md4+px) {
+		width: 51px;
+	}
+}
+.label-new {
+	background-color: #eb5757;
+	width: 90px;
+	margin: 0px 0px 0px 0px;
+	@media (max-width: $md4+px) {
+		width: 63px;
+	}
+}
+.available {
+	color: #828282;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 0px 0px 0px 17px;
+	background: url(../img/icons/available_icon.svg) left no-repeat;
+	@media (max-width: $md4+px) {
+		font-size: 12px;
+		line-height: 12px;
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.big-title {
+	font-size: 72px;
+	line-height: 72px;
+	font-family: "heliosextblack";
+	color: #fff;
+	@media (max-width: 1440px) {
+		font-size: 48px;
+		line-height: 58px;
+	}
+	@media (max-width: 940px) {
+		font-size: 36px;
+		line-height: 36px;
+	}
+	@media (max-width: $md5+px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+.title-h2Hel {
+	color: #141414;
+	font-family: "heliosextblack";
+	font-size: 48px;
+	line-height: 48px;
+	@media (max-width: 1440px) {
+		font-size: 36px;
+		line-height: 36px;
+	}
+	@media (max-width: $md4+px) {
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+.btn3 {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	padding: 13px 32px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		color: #141414;
+	}
+	@media (max-width: $md4+px) {
+		font-size: 14px;
+		line-height: 20px;
+		padding: 10px 20px;
+	}
+	@media (max-width: $md5+px) {
+		padding: 10px 15px;
+	}
+	@media (max-width: 360px) {
+		font-size: 12px;
+		line-height: 15px;
+	}
+}
+html._touch .btn3 {
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #141414;
+}
+.btn-anim {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	padding: 13px 32px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	transition: all 0.3s ease 0s;
+	background-image: linear-gradient(to left, transparent, transparent 50%, #fff 50%, #fff);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	&:hover {
+		background-position: 0 0;
+		//background-color: #fff;
+		color: #141414;
+	}
+}
+.btn-15 {
+	background: #004ea6;
+	border: none;
+	z-index: 1;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	outline: none;
+	color: #fff;
+	&::after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background-color: #141414;
+		border-radius: 6px;
+		transition: all 0.3s ease;
+	}
+	&:hover {
+		color: #fff;
+		&::after {
+			width: 100%;
+		}
+	}
+	&:active {
+		top: 2px;
+	}
+	&_wht {
+		background: transparent;
+		border: 1px solid #fff;
+		overflow: hidden;
+		&:hover {
+			color: #141414;
+			border: 1px solid transparent;
+		}
+		&::after {
+			background-color: #fff;
+		}
+	}
+	&_blck {
+		background: transparent;
+		border: 1px solid #141414;
+		overflow: hidden;
+		color: #141414;
+		&:hover {
+			color: #fff;
+			border: 1px solid transparent;
+		}
+		&::after {
+			background-color: #141414;
+		}
+	}
+}
+._img-parallax {
+	width: 100vmax;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	pointer-events: none;
+}
+.float-line {
+	--underline-width: 0;
+	--underline-offset-x: 0;
+	position: relative;
+	display: inline-flex;
+	padding: 0;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 92%;
+		height: 2px;
+		width: var(--underline-width);
+		transform: translateX(var(--underline-offset-x));
+		background-color: var(--color-underline);
+		transition: transform 0.5s, width 0.5s;
+		border-radius: 4px;
+	}
+
+	// .float-line__item
+
+	&__item {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 24px;
+		color: #828282;
+		cursor: pointer;
+		padding: 0px 0px 5px 0px;
+		display: block;
+		&._active {
+			color: #004ea6;
+			border-bottom: 2px solid #004ea6;
+		}
+	}
+}
+.empty {
+	background: #141414;
+	color: #fff;
+	width: 100%;
+	padding: 60px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	@include adaptiv-value("margin-bottom", 120, 40, 1);
+	@media (max-width: $md3+px) {
+		padding: 30px 20px;
+	}
+	// .empty__img
+
+	&__img {
+		width: 889px;
+		left: 70%;
+		@media (max-width: $md2+px) {
+			width: 732px;
+			height: 120vh;
+			object-fit: contain;
+		}
+		@media (max-width: $md3+px) {
+			width: 340px;
+			height: 50vh;
+		}
+	}
+
+	// .empty__content
+
+	&__content {
+		max-width: 653px;
+		position: relative;
+		z-index: 2;
+		@media (max-width: $md2+px) {
+			max-width: 417px;
+		}
+		@media (max-width: $md3+px) {
+			max-width: 209px;
+		}
+	}
+	// .empty__big-title
+
+	&__big-title {
+		font-size: 144px;
+		line-height: 144px;
+		font-family: heliosextblack;
+		@media (max-width: $md2+px) {
+			font-size: 72px;
+			line-height: 72px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 48px;
+			line-height: 58px;
+		}
+	}
+
+	&__title {
+		color: #fff;
+		margin: 0px 0px 40px 0px;
+		font-size: 72px;
+		line-height: 72px;
+		font-family: heliosextblack;
+		@media (max-width: $md2+px) {
+			font-size: 48px;
+			line-height: 58px;
+			margin: 0px 0px 80px 0px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 24px;
+			line-height: 24px;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	// .empty__text
+
+	&__text {
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: 400;
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+}
+//<ГОТОВЫЕ КЛАССЫ>====================================================================================================
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+//====================================================================================================
+
+//====================================================================================================
+#map {
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
+}
+//====================================================================================================
+._swiper,
+.certificates__slider,
+.popular-slider__row_2,
+.popular-slider__row_1,
+.popular-slider__row {
+	overflow: hidden;
+	//.swiper-wrapper
+	.swiper-wrapper {
+		width: 100%;
+		height: 100%;
+		box-sizing: content-box;
+		display: flex;
+		position: relative;
+	}
+	&.swiper-container-vertical {
+		.swiper-wrapper {
+			flex-direction: column;
+		}
+	}
+	&.swiper-container-autoheight {
+		.swiper-wrapper {
+			align-items: flex-start;
+		}
+	}
+}
+.swiper-container-initialized {
+	.swiper-slide {
+		flex-shrink: 0;
+		// transition-property: transform;
+	}
+}
+.swiper-container-android {
+	.swiper-slide,
+	.swiper-wrapper {
+		transform: translate3d(0px, 0, 0);
+	}
+}
+.swiper-button-lock {
+	display: none !important;
+}
+//====================================================================================================
+._tabs {
+}
+._tabs-item {
+}
+._tabs-block {
+	display: none;
+	&._active {
+		display: block;
+	}
+}
+//</ГОТОВЫЕ КЛАССЫ>====================================================================================================
+
+[data-simplebar] {
+	position: relative;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.simplebar-wrapper {
+	overflow: hidden;
+	width: inherit;
+	height: inherit;
+	max-width: inherit;
+	max-height: inherit;
+}
+
+.simplebar-mask {
+	direction: inherit;
+	position: absolute;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: auto !important;
+	height: auto !important;
+	z-index: 0;
+}
+
+.simplebar-offset {
+	direction: inherit !important;
+	box-sizing: inherit !important;
+	resize: none !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	margin: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+	direction: inherit;
+	box-sizing: border-box !important;
+	position: relative;
+	display: block;
+	height: 100%; /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+	width: auto;
+	max-width: 100%; /* Not required for horizontal scroll to trigger */
+	max-height: 100%; /* Needed for vertical scroll to trigger */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	padding: 0px 0px 75px 0px;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+.simplebar-content:before,
+.simplebar-content:after {
+	content: " ";
+	display: table;
+}
+
+.simplebar-placeholder {
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+	box-sizing: inherit !important;
+	height: 100%;
+	width: 100%;
+	max-width: 1px;
+	position: relative;
+	float: left;
+	max-height: 1px;
+	overflow: hidden;
+	z-index: -1;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+	flex-grow: inherit;
+	flex-shrink: 0;
+	flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+	box-sizing: inherit;
+	display: block;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1000%;
+	width: 1000%;
+	min-height: 1px;
+	min-width: 1px;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.simplebar-track {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+	pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+	pointer-events: all;
+}
+
+.simplebar-scrollbar {
+	position: absolute;
+	left: 0;
+	right: 0;
+	min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+	position: absolute;
+	content: "";
+	background: black;
+	border-radius: 7px;
+	left: 2px;
+	right: 2px;
+	opacity: 0;
+	transition: opacity 0.2s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+	/* When hovered, remove all transitions from drag handle */
+	opacity: 0.5;
+	transition: opacity 0s linear;
+}
+
+.simplebar-track.simplebar-vertical {
+	top: 0;
+	width: 8px;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+	top: 2px;
+	bottom: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+	left: 0;
+	height: 8px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+	height: 100%;
+	left: 2px;
+	right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+	right: auto;
+	left: 0;
+	top: 2px;
+	height: 7px;
+	min-height: 0;
+	min-width: 10px;
+	width: auto;
+}
+
+/* Rtl support */
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
+	right: auto;
+	left: 0;
+}
+
+.hs-dummy-scrollbar-size {
+	direction: rtl;
+	position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	height: 500px;
+	width: 500px;
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.simplebar-hide-scrollbar {
+	position: fixed;
+	left: 0;
+	visibility: hidden;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}

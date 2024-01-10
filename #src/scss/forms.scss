@@ -1,0 +1,418 @@
+//<FORM ()>====================================================================================================
+
+.form__error {
+	color: #eb5757;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+//</FORM>====================================================================================================
+
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.btn {
+	display: inline-flex;
+	padding: 0px 0px;
+	color: #fff;
+	@media (min-width: 992px) {
+		&:hover {
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}
+.form-btn {
+	color: #fff;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	width: 100%;
+	padding: 13px 0px;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		color: #141414;
+	}
+}
+//</BUTTONS>====================================================================================================
+
+//<SELECT (sel+tab)>====================================================================================================
+.select {
+	position: relative;
+	// .select__item
+	&__item {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		color: #141414;
+		border: 1px solid #828282;
+		background-color: #fff;
+		cursor: pointer;
+		border-radius: 6px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+	// .select__value
+	&__value {
+		display: flex;
+		font-size: 18px;
+		padding: 13px 20px;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		@media (max-width: $md5+px) {
+			font-size: 14px;
+			line-height: 16px;
+			padding: 14px 10px;
+		}
+		span {
+			height: 1em;
+		}
+		&:before {
+			content: "";
+			display: inline-block;
+			transition: all 0.3s ease 0s;
+			width: 11px;
+			height: 7px;
+			background: url("../img/icons/select.svg") center / 100% no-repeat;
+			margin: 0px 0px 0px 10px;
+		}
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	// .select__options
+	&__options {
+		color: #141414;
+		position: absolute;
+		top: 55px;
+		border-radius: 6px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border: 1px solid #828282;
+		font-size: 18px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+	// .select__option
+	&__option {
+		cursor: pointer;
+		padding: 13px 15px;
+		margin: 0px 0px 0px 0px;
+		@media (min-width: 992px) {
+			&:hover {
+				background: #f2f2f2;
+			}
+		}
+		@media (max-width: $md5+px) {
+			font-size: 14px;
+			line-height: 16px;
+			padding: 14px 10px;
+		}
+	}
+	&._active {
+		z-index: 5;
+		.select__value {
+			&:before {
+				transform: rotate(-180deg);
+			}
+		}
+		.select__options {
+			display: block;
+		}
+	}
+}
+//</SELECT>====================================================================================================
+
+//<INPUT (inp+tab)>====================================================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	&:focus {
+		outline: none;
+	}
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px 0px 0px 2px;
+	font-size: 18px;
+	line-height: 24px;
+	color: #fff;
+	background: transparent;
+	border-bottom: 1px solid #fff;
+	height: 31px;
+	@media (max-width: $md4+px) {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	&._focus {
+	}
+	&._error {
+	}
+}
+textarea.input {
+	resize: vertical;
+	padding: 0px 0px;
+}
+//</INPUT>====================================================================================================
+
+//<CHECK (chk+tab)>====================================================================================================
+.form .checkbox {
+	position: relative;
+	// .checkbox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked + .checkbox__text:before {
+			background: rgba(255, 255, 255, 0.5) url("../img/icons/check.svg") center no-repeat;
+		}
+	}
+	// .checkbox__text
+	&__text {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		position: relative;
+		font-size: 14px;
+		color: rgba(255, 255, 255, 0.5);
+		letter-spacing: -0.3px;
+		line-height: 18px;
+		cursor: pointer;
+		&:before {
+			content: "";
+			align-self: flex-start;
+			margin: 0px 14px 0px 0px;
+			flex: 0 0 24px;
+			left: 0;
+			top: 0;
+			width: 24px;
+			height: 24px;
+			background: rgba(255, 255, 255, 0.5);
+			border-radius: 4px;
+		}
+	}
+	.checkbox__link {
+		color: rgba(255, 255, 255, 0.5);
+		text-decoration: underline;
+		@media (min-width: 992px) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		@media (max-width: 1100px) {
+			margin: 0px 0px 0px 5px;
+		}
+	}
+	&._error {
+		.checkbox__text {
+			color: #eb5757;
+			&:before {
+				border: 1px solid #ee1212;
+			}
+		}
+	}
+}
+
+.form-feedback__input .checkbox {
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked + .checkbox__text:before {
+			background: rgba(255, 255, 255, 0.5) url("../img/icons/check.svg") center no-repeat;
+		}
+	}
+	&__text {
+		position: relative;
+		font-size: 14px;
+		color: rgba(255, 255, 255, 0.5);
+		letter-spacing: -0.3px;
+		line-height: 18px;
+		cursor: pointer;
+		&:before {
+			content: "";
+			display: block;
+			float: left;
+			margin: 0px 14px 0px 0px;
+			flex: 0 0 24px;
+			left: 0;
+			top: 0;
+			width: 24px;
+			height: 24px;
+			background: rgba(255, 255, 255, 0.5);
+			border-radius: 4px;
+		}
+		@media (max-width: $md5+px) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+	&__link {
+		color: rgba(255, 255, 255, 0.5);
+		text-decoration: underline;
+		@media (min-width: 992px) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&._error {
+		.checkbox__link {
+			color: #eb5757;
+		}
+		.checkbox__text {
+			color: #eb5757;
+			&:before {
+				border: 1px solid #eb5757;
+			}
+		}
+	}
+}
+//</CHECK>====================================================================================================
+
+//<OPTIONS (opt+tab)>====================================================================================================
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	// .options__item
+	&__item {
+		position: relative;
+		cursor: pointer;
+		&._error {
+		}
+	}
+	// .options__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		visibility: hidden;
+		&:checked + .options__text:before {
+		}
+		&:checked + .options__text:after {
+			transform: scale(1);
+		}
+	}
+	// .options__text
+	&__text {
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		font-size: 16px;
+		color: #ffffff;
+		letter-spacing: -0.3px;
+		line-height: calc(20 / 16);
+		&:before {
+			content: "";
+			align-self: flex-start;
+			margin: 0px 14px 0px 0px;
+			flex: 0 0 20px;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			width: 20px;
+			height: 18px;
+			background: #fff;
+			border: 1px solid #a7a9ac;
+		}
+		&:after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #77243a;
+			position: absolute;
+			left: 5px;
+			top: 4px;
+		}
+	}
+}
+//</OPTIONS>====================================================================================================
+
+//<QUANTITY>====================================================================================================
+.quantity {
+	width: 154px;
+	height: 50px;
+	display: flex;
+	border-radius: 12px;
+	background-color: #f2f2f2;
+	// .quantity__button
+	&__button {
+		flex: 0 0 55px;
+		position: relative;
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 0.3s ease 0s;
+			margin: 0px 0px 0px -4.5px;
+			background-color: #141414;
+			width: 18px;
+			height: 3px;
+		}
+		@media (min-width: $md2+px) {
+			&:hover {
+				&::before,
+				&::after {
+				}
+			}
+		}
+		// .quantity__button_plus
+		&_plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&_minus {
+		}
+	}
+	// .quantity__input
+	&__input {
+		flex: 1 1 auto;
+		input {
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			background: transparent;
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 22px;
+			color: #141414;
+		}
+	}
+}
+//</QUANTITY>====================================================================================================

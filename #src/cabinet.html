@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Личный кабинет"
+})
+
+<body>
+	@@include('_preloader.html',{})
+	<div class="wrapper">
+		@@include('_header.html',{})
+		@@include('_breadcrumbs.html',{
+		"last_item":"Личный кабинет"
+		})
+		<h1 class="cabinet-title title-h2Hel">Личный кабинет</h1>
+		<section class="data">
+			<div class="personal-data">
+				<div class="personal-data__title">Персональные данные</div>
+				<div class="personal-data__content">
+					<div class="personal-data__row">
+						<div class="personal-data__name">Название компании</div>
+						<div class="personal-data__content">ООО «Торговый дом «Электрум»</div>
+					</div>
+					<div class="personal-data__row">
+						<div class="personal-data__name">ИНН</div>
+						<div class="personal-data__content">2460243359</div>
+					</div>
+					<div class="personal-data__row">
+						<div class="personal-data__name">Контактное лицо</div>
+						<div class="personal-data__content">Константинопольский Константин Константинович</div>
+					</div>
+					<div class="personal-data__row">
+						<div class="personal-data__name">E-mail</div>
+						<div class="personal-data__content">konstkonstkonst@gmail.com</div>
+					</div>
+					<div class="personal-data__row">
+						<div class="personal-data__name">Телефон</div>
+						<div class="personal-data__content">8 800 555 35 35</div>
+					</div>
+				</div>
+				<div class="personal-data__btns">
+					<a href="#change-data" class="personal-data__btn btn-15 _popup-link">Изменить данные</a>
+					<a href="#change-password" class="personal-data__btn btn-15 _popup-link">Изменить пароль</a>
+					<a href="" class="personal-data__btn btn-15 btn-15_blck">Выйти из аккаунта</a>
+				</div>
+			</div>
+			<div class="delivery-addresses">
+				<h2 class="delivery-addresses__title">Адреса доставки</h2>
+				<div data-simplebar class="delivery-addresses__content">
+					<div class="delivery-addresses__item">
+						<div class="delivery-addresses__item-number">1</div>
+						<div class="delivery-addresses__col">
+							<div class="delivery-addresses__address">г. Красноярск, ул. Курчатова, дом 9б, оф. 177</div>
+							<div class="delivery-addresses__btns">
+								<a href="#change-address" class="delivery-addresses__btn _popup-link">изменить адрес</a>
+								<a href="" class="delivery-addresses__btn">удалить</a>
+								<a href="" class="delivery-addresses__btn delivery-addresses__btn_default">по умолчанию</a>
+							</div>
+						</div>
+					</div>
+					<div class="delivery-addresses__item">
+						<div class="delivery-addresses__item-number">2</div>
+						<div class="delivery-addresses__col">
+							<div class="delivery-addresses__address">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							<div class="delivery-addresses__btns">
+								<a href="#change-address" class="delivery-addresses__btn _popup-link">изменить адрес</a>
+								<a href="" class="delivery-addresses__btn">удалить</a>
+								<a href="" class="delivery-addresses__btn">выбрать</a>
+							</div>
+						</div>
+					</div>
+					<div class="delivery-addresses__item">
+						<div class="delivery-addresses__item-number">3</div>
+						<div class="delivery-addresses__col">
+							<div class="delivery-addresses__address">г. Красноярск, ул. Калинина, дом 66</div>
+							<div class="delivery-addresses__btns">
+								<a href="#change-address" class="delivery-addresses__btn _popup-link">изменить адрес</a>
+								<a href="" class="delivery-addresses__btn">удалить</a>
+								<a href="" class="delivery-addresses__btn">выбрать</a>
+							</div>
+						</div>
+					</div>
+					<div class="delivery-addresses__item">
+						<div class="delivery-addresses__item-number">4</div>
+						<div class="delivery-addresses__col">
+							<div class="delivery-addresses__address">г. Красноярск, ул. Курчатова, дом 9б, оф. 177</div>
+							<div class="delivery-addresses__btns">
+								<a href="#change-address" class="delivery-addresses__btn _popup-link">изменить адрес</a>
+								<a href="" class="delivery-addresses__btn">удалить</a>
+								<a href="" class="delivery-addresses__btn">выбрать</a>
+							</div>
+						</div>
+					</div>
+					<div class="delivery-addresses__item">
+						<div class="delivery-addresses__item-number">5</div>
+						<div class="delivery-addresses__col">
+							<div class="delivery-addresses__address">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							<div class="delivery-addresses__btns">
+								<a href="#change-address" class="delivery-addresses__btn _popup-link">изменить адрес</a>
+								<a href="" class="delivery-addresses__btn">удалить</a>
+								<a href="" class="delivery-addresses__btn">выбрать</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="add-address" class="delivery-addresses__btn-add btn-15 _popup-link">Добавить адрес</a>
+			</div>
+		</section>
+		<section class="documents">
+			<div class="documents__title">Документы</div>
+			<div class="documents__content">
+				<a href="" class="documents__item">
+					<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+						<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+					</svg>
+					<span class="documents__name">Заявление на возврат ТМЦ в счёт будущих поставок</span>
+				</a>
+				<a href="" class="documents__item">
+					<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+						<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+					</svg>
+					<span class="documents__name">Заявление на возврат ТМЦ с возвратом средств на расчётный счёт</span>
+				</a>
+				<a href="" class="documents__item">
+					<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+						<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+					</svg>
+					<span class="documents__name">Заявление на замену брака</span>
+				</a>
+			</div>
+		</section>
+		<section class="orders">
+			<div class="orders__header">
+				<div class="orders__title">История заказов</div>
+				<div class="orders__sort">
+					<div class="orders__sort-title">Сортировка</div>
+					<div class="orders__select">
+						<select name="form[]" class="form">
+							<option value="1" selected="selected">По возрастанию суммы заказа</option>
+							<option value="2">По убыванию суммы заказа</option>
+							<option value="3">Выполненные</option>
+							<option value="4">Отмененные</option>
+							<option value="5">Принятые</option>
+							<option value="6">Оплаченные</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div data-spollers class="orders__list">
+				<div class="orders__item order">
+					<div class="order__header">
+						<div class="order__title">Заказ № <span class="order__number">8835</span></div>
+						<div class="order__status status__accepted">Принят, ожидается оплата</div>
+						<a href="" class="order__invoice">
+							<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+								<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+							</svg>
+							<span class="order__invoice-name">Счёт на оплату</span>
+						</a>
+					</div>
+					<div class="order__details">
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Дата и время заказа</div>
+								<div class="order__details-content">26.11.2020, 08:45:08</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">ФИО</div>
+								<div class="order__details-content">Константинопольский Константин Константинович</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">E-mail</div>
+								<div class="order__details-content">konstkonstkonst@gmail.com</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Телефон</div>
+								<div class="order__details-content">8 800 555 35 35</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Адрес доставки</div>
+								<div class="order__details-content">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							</div>
+						</div>
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Способ оплаты</div>
+								<div class="order__details-content">Расчет по карте на сайте</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Способ доставки</div>
+								<div class="order__details-content">Курьером</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Сумма заказа</div>
+								<div class="order__details-content">3 962 811,9 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Скидка</div>
+								<div class="order__details-content">20 000 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Итог</div>
+								<div class="order__details-content">3 629 249,9 ₽</div>
+							</div>
+						</div>
+					</div>
+					<a href="" data-spoller class="order__more-btn btn-15">Показать состав заказа</a>
+					<div class="order__cards">
+						<div class="order__cards-title">Состав заказа</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_1.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Выключатель автоматический однополюсный 16А С ВА47-100 10кА</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">773,7 ₽</div>
+									<div class="card-order__old-price">814 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">23 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">17 795,1 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_2.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Взрывозащищенный светильник Сахалин</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">14 400 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">4 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">57 600 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_3.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Ограничитель импульсных перенапряжений (УЗИП) OptiDin OM-II-3-280/40/R, 114300</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">15 514,80 ₽</div>
+									<div class="card-order__old-price">18 899,90 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">1 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">15 514,80 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_4.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Силовой кабель СИП-4 Четырехжильный, 50 м.</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">4 030 ₽</div>
+									<div class="card-order__old-price">4 405 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">878 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">3 538 340 ₽</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orders__item order">
+					<div class="order__header">
+						<div class="order__title">Заказ № <span class="order__number">8835</span></div>
+						<div class="order__status status__paid ">Оплачен, формируется к отправке</div>
+						<a href="" class="order__invoice">
+							<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+								<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+							</svg>
+							<span class="order__invoice-name">Счёт на оплату</span>
+						</a>
+					</div>
+					<div class="order__details">
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Дата и время заказа</div>
+								<div class="order__details-content">26.11.2020, 08:45:08</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">ФИО</div>
+								<div class="order__details-content">Константинопольский Константин Константинович</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">E-mail</div>
+								<div class="order__details-content">konstkonstkonst@gmail.com</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Телефон</div>
+								<div class="order__details-content">8 800 555 35 35</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Адрес доставки</div>
+								<div class="order__details-content">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							</div>
+						</div>
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Способ оплаты</div>
+								<div class="order__details-content">Расчет по карте на сайте</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Способ доставки</div>
+								<div class="order__details-content">Курьером</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Сумма заказа</div>
+								<div class="order__details-content">3 962 811,9 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Скидка</div>
+								<div class="order__details-content">20 000 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Итог</div>
+								<div class="order__details-content">3 629 249,9 ₽</div>
+							</div>
+						</div>
+					</div>
+					<a href="" data-spoller class="order__more-btn btn-15">Показать состав заказа</a>
+					<div class="order__cards">
+						<div class="order__cards-title">Состав заказа</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_1.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Выключатель автоматический однополюсный 16А С ВА47-100 10кА</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">773,7 ₽</div>
+									<div class="card-order__old-price">814 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">23 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">17 795,1 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_2.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Взрывозащищенный светильник Сахалин</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">14 400 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">4 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">57 600 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_3.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Ограничитель импульсных перенапряжений (УЗИП) OptiDin OM-II-3-280/40/R, 114300</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">15 514,80 ₽</div>
+									<div class="card-order__old-price">18 899,90 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">1 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">15 514,80 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_4.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Силовой кабель СИП-4 Четырехжильный, 50 м.</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">4 030 ₽</div>
+									<div class="card-order__old-price">4 405 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">878 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">3 538 340 ₽</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orders__item order">
+					<div class="order__header">
+						<div class="order__title">Заказ № <span class="order__number">8835</span></div>
+						<div class="order__status status__completed">Выполнен</div>
+						<a href="" class="order__invoice">
+							<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+								<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+							</svg>
+							<span class="order__invoice-name">Счёт на оплату</span>
+						</a>
+					</div>
+					<div class="order__details">
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Дата и время заказа</div>
+								<div class="order__details-content">26.11.2020, 08:45:08</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">ФИО</div>
+								<div class="order__details-content">Константинопольский Константин Константинович</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">E-mail</div>
+								<div class="order__details-content">konstkonstkonst@gmail.com</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Телефон</div>
+								<div class="order__details-content">8 800 555 35 35</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Адрес доставки</div>
+								<div class="order__details-content">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							</div>
+						</div>
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Способ оплаты</div>
+								<div class="order__details-content">Расчет по карте на сайте</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Способ доставки</div>
+								<div class="order__details-content">Курьером</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Сумма заказа</div>
+								<div class="order__details-content">3 962 811,9 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Скидка</div>
+								<div class="order__details-content">20 000 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Итог</div>
+								<div class="order__details-content">3 629 249,9 ₽</div>
+							</div>
+						</div>
+					</div>
+					<a href="" data-spoller class="order__more-btn btn-15">Показать состав заказа</a>
+					<div class="order__cards">
+						<div class="order__cards-title">Состав заказа</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_1.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Выключатель автоматический однополюсный 16А С ВА47-100 10кА</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">773,7 ₽</div>
+									<div class="card-order__old-price">814 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">23 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">17 795,1 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_2.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Взрывозащищенный светильник Сахалин</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">14 400 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">4 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">57 600 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_3.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Ограничитель импульсных перенапряжений (УЗИП) OptiDin OM-II-3-280/40/R, 114300</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">15 514,80 ₽</div>
+									<div class="card-order__old-price">18 899,90 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">1 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">15 514,80 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_4.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Силовой кабель СИП-4 Четырехжильный, 50 м.</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">4 030 ₽</div>
+									<div class="card-order__old-price">4 405 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">878 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">3 538 340 ₽</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orders__item order">
+					<div class="order__header">
+						<div class="order__title">Заказ № <span class="order__number">8835</span></div>
+						<div class="order__status status__sent">Отправлен</div>
+						<a href="" class="order__invoice">
+							<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+								<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+							</svg>
+							<span class="order__invoice-name">Счёт на оплату</span>
+						</a>
+					</div>
+					<div class="order__details">
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Дата и время заказа</div>
+								<div class="order__details-content">26.11.2020, 08:45:08</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">ФИО</div>
+								<div class="order__details-content">Константинопольский Константин Константинович</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">E-mail</div>
+								<div class="order__details-content">konstkonstkonst@gmail.com</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Телефон</div>
+								<div class="order__details-content">8 800 555 35 35</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Адрес доставки</div>
+								<div class="order__details-content">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							</div>
+						</div>
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Способ оплаты</div>
+								<div class="order__details-content">Расчет по карте на сайте</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Способ доставки</div>
+								<div class="order__details-content">Курьером</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Сумма заказа</div>
+								<div class="order__details-content">3 962 811,9 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Скидка</div>
+								<div class="order__details-content">20 000 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Итог</div>
+								<div class="order__details-content">3 629 249,9 ₽</div>
+							</div>
+						</div>
+					</div>
+					<a href="" data-spoller class="order__more-btn btn-15">Показать состав заказа</a>
+					<div class="order__cards">
+						<div class="order__cards-title">Состав заказа</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_1.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Выключатель автоматический однополюсный 16А С ВА47-100 10кА</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">773,7 ₽</div>
+									<div class="card-order__old-price">814 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">23 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">17 795,1 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_2.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Взрывозащищенный светильник Сахалин</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">14 400 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">4 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">57 600 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_3.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Ограничитель импульсных перенапряжений (УЗИП) OptiDin OM-II-3-280/40/R, 114300</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">15 514,80 ₽</div>
+									<div class="card-order__old-price">18 899,90 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">1 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">15 514,80 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_4.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Силовой кабель СИП-4 Четырехжильный, 50 м.</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">4 030 ₽</div>
+									<div class="card-order__old-price">4 405 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">878 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">3 538 340 ₽</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="orders__item order">
+					<div class="order__header">
+						<div class="order__title">Заказ № <span class="order__number">8835</span></div>
+						<div class="order__status status__canceled">Отменён</div>
+						<a href="" class="order__invoice">
+							<svg width="34" height="42" viewBox="0 0 34 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M23 1L33 13V41H1V1H23ZM28.2 36.2H5.8V5.8H19.8V15.9333H28.2V36.2ZM26.6 21H7.4V25.8H26.6V21ZM26.6 29H7.4V33.8H26.6V29Z" fill="#004EA6" />
+								<path d="M33 13H34V12.638L33.7682 12.3598L33 13ZM23 1L23.7682 0.359816L23.4684 0H23V1ZM33 41V42H34V41H33ZM1 41H0V42H1V41ZM1 1V0H0V1H1ZM5.8 36.2H4.8V37.2H5.8V36.2ZM28.2 36.2V37.2H29.2V36.2H28.2ZM5.8 5.8V4.8H4.8V5.8H5.8ZM19.8 5.8H20.8V4.8H19.8V5.8ZM19.8 15.9333H18.8V16.9333H19.8V15.9333ZM28.2 15.9333H29.2V14.9333H28.2V15.9333ZM7.4 21V20H6.4V21H7.4ZM26.6 21H27.6V20H26.6V21ZM7.4 25.8H6.4V26.8H7.4V25.8ZM26.6 25.8V26.8H27.6V25.8H26.6ZM7.4 29V28H6.4V29H7.4ZM26.6 29H27.6V28H26.6V29ZM7.4 33.8H6.4V34.8H7.4V33.8ZM26.6 33.8V34.8H27.6V33.8H26.6ZM33.7682 12.3598L23.7682 0.359816L22.2318 1.64018L32.2318 13.6402L33.7682 12.3598ZM34 41V13H32V41H34ZM1 42H33V40H1V42ZM0 1V41H2V1H0ZM23 0H1V2H23V0ZM5.8 37.2H28.2V35.2H5.8V37.2ZM4.8 5.8V36.2H6.8V5.8H4.8ZM19.8 4.8H5.8V6.8H19.8V4.8ZM20.8 15.9333V5.8H18.8V15.9333H20.8ZM28.2 14.9333H19.8V16.9333H28.2V14.9333ZM29.2 36.2V15.9333H27.2V36.2H29.2ZM7.4 22H26.6V20H7.4V22ZM8.4 25.8V21H6.4V25.8H8.4ZM26.6 24.8H7.4V26.8H26.6V24.8ZM25.6 21V25.8H27.6V21H25.6ZM7.4 30H26.6V28H7.4V30ZM8.4 33.8V29H6.4V33.8H8.4ZM26.6 32.8H7.4V34.8H26.6V32.8ZM25.6 29V33.8H27.6V29H25.6Z" fill="white" />
+							</svg>
+							<span class="order__invoice-name">Счёт на оплату</span>
+						</a>
+					</div>
+					<div class="order__details">
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Дата и время заказа</div>
+								<div class="order__details-content">26.11.2020, 08:45:08</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">ФИО</div>
+								<div class="order__details-content">Константинопольский Константин Константинович</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">E-mail</div>
+								<div class="order__details-content">konstkonstkonst@gmail.com</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Телефон</div>
+								<div class="order__details-content">8 800 555 35 35</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Адрес доставки</div>
+								<div class="order__details-content">г. Красноярск, ул. ​проспект Газеты Красноярский Рабочий, дом 120, оф. 4</div>
+							</div>
+						</div>
+						<div class="order__details-col">
+							<div class="order__details-row">
+								<div class="order__details-name">Способ оплаты</div>
+								<div class="order__details-content">Расчет по карте на сайте</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Способ доставки</div>
+								<div class="order__details-content">Курьером</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Сумма заказа</div>
+								<div class="order__details-content">3 962 811,9 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Скидка</div>
+								<div class="order__details-content">20 000 ₽</div>
+							</div>
+							<div class="order__details-row">
+								<div class="order__details-name">Итог</div>
+								<div class="order__details-content">3 629 249,9 ₽</div>
+							</div>
+						</div>
+					</div>
+					<a href="" data-spoller class="order__more-btn btn-15">Показать состав заказа</a>
+					<div class="order__cards">
+						<div class="order__cards-title">Состав заказа</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_1.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Выключатель автоматический однополюсный 16А С ВА47-100 10кА</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">773,7 ₽</div>
+									<div class="card-order__old-price">814 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">23 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">17 795,1 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_2.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Взрывозащищенный светильник Сахалин</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">14 400 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">4 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">57 600 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_3.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Ограничитель импульсных перенапряжений (УЗИП) OptiDin OM-II-3-280/40/R, 114300</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">15 514,80 ₽</div>
+									<div class="card-order__old-price">18 899,90 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">1 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">15 514,80 ₽</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="order__card card-order">
+							<div class="card-order__image"><img src="img/catalog/img_4.png" alt=""></div>
+							<div class="card-order__col">
+								<div class="card-order__name">Силовой кабель СИП-4 Четырехжильный, 50 м.</div>
+								<div class="card-order__article">
+									<span class="card-order__article-name">Артикул:</span>
+									<span class="card-order__article-number">MVA40-1-016-C</span>
+								</div>
+								<div class="card-order__prices">
+									<div class="card-order__price">4 030 ₽</div>
+									<div class="card-order__old-price">4 405 ₽</div>
+								</div>
+								<div class="card-order__total">
+									<div class="card-order__quantity">878 шт.</div>
+									<div class="card-order__sum">=<span class="card-order__sum-blu">3 538 340 ₽</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			@@include('_pagging.html',{})
+		</section>
+		@@include('_footer.html',{})
+	</div>
+
+	@@include('_js.html',{})
+</body>
+
+</html>

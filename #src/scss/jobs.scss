@@ -1,0 +1,355 @@
+.jobs {
+
+	// .jobs__title
+
+	&__title {
+		margin: 0px 0px 50px 0px;
+
+		@media (max-width: 939.98px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .jobs__desc
+
+	&__desc {
+		display: flex;
+		font-size: 18px;
+		line-height: 24px;
+		gap: 100px;
+		margin-bottom: 60px;
+
+		a {
+			color: #409aff;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		p {
+			margin-bottom: 15px;
+		}
+
+		.jobs__desc-col {
+			flex: 0 1 50%;
+		}
+
+		@media (max-width: 1280px) {
+			display: block;
+		}
+
+		@media (max-width: 767px) {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	// .jobs__text
+
+	&__text {
+		margin: 0px 0px 30px 0px;
+		font-size: 16px;
+		line-height: 24px;
+
+		&_link {
+			color: #409aff;
+		}
+
+		@media (max-width: 767.98px) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+
+	// .jobs__main
+
+	&__main {}
+
+	// .jobs__list
+
+	&__list {}
+
+	// .jobs__item
+
+	&__item {
+		margin: 0px 0px 30px 0px;
+	}
+
+	// .jobs__form
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0px 0px 60px 0px;
+		gap: 30px;
+
+		@media (max-width: 767.98px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	// .jobs__form-col
+
+	&__form-col {
+		flex: 0 1 40%;
+
+		@media (max-width: 1100px) {
+			flex: 1 1 100%;
+
+		}
+
+		@media (max-width: 939.98px) {}
+
+		.form {
+			margin: 0;
+			max-width: 478px;
+
+			@media (max-width: 939.98px) {
+				max-width: 100%;
+			}
+
+			// .form__line
+
+			&__line {}
+
+			// .form__input
+
+			&__input {}
+
+			// .form__button
+
+			&__button {}
+
+			// .form__checkbox
+
+			&__checkbox {
+				margin: 25px 0px 0px 0px;
+			}
+
+			.input {
+				// .input__file
+
+				&__file {
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+				}
+
+				// .input__file-button
+
+				&__file-button {
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+				}
+
+				// .input__file-icon-wrapper
+
+				&__file-icon-wrapper {}
+
+				// .input__file-icon
+
+				&__file-icon {
+					width: 16px;
+					height: 20px;
+					margin: 0px 10px 0px 0px;
+				}
+
+				// .input__file-button-text
+
+				&__file-button-text {}
+			}
+		}
+	}
+
+	// .jobs__form-title
+
+	&__form-title {
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 37px;
+		margin: 0px 0px 35px 0px;
+
+		@media (max-width: 939.98px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .jobs__form-desc
+
+	&__form-desc {
+		max-width: 600px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+
+		@media (max-width: 939.98px) {
+			margin: 0px 0px 25px 0px;
+			max-width: 100%;
+		}
+	}
+}
+
+.vacancy {
+	padding: 45px 80px 68px 80px;
+	border: 1px solid #000;
+
+	@media (max-width: 1280px) {
+		padding: 30px;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 10px;
+	}
+
+	// .vacancy__title
+
+	&__title {
+		font-size: 30px;
+		font-weight: 500;
+		margin: 0px 0px 35px 0px;
+
+		@media (max-width: 767px) {
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 27px;
+		}
+
+		@media (max-width: 479.98px) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	// .vacancy__desc
+
+	&__desc {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 0px 0px 30px 0px;
+
+		@media (max-width: 479.98px) {
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .vacancy__row
+
+	&__row {
+		display: flex;
+
+		&:not(:last-child) {
+			margin: 0px 0px 30px 0px;
+
+			@media (max-width: 767.98px) {
+				margin: 0px 0px 15px 0px;
+			}
+		}
+
+		@media (max-width: 1280px) {
+			flex-direction: column;
+		}
+	}
+
+	// .vacancy__name
+
+	&__name {
+		flex: 0 0 260px;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+
+		@media (max-width: 1280px) {
+			flex: 1 1 auto;
+			margin: 0px 0px 10px 0px;
+		}
+
+	}
+
+	// .vacancy__text
+
+	&__text {
+		font-size: 16px;
+		line-height: 24px;
+		flex: 1 1 auto;
+
+		@media (max-width: 479.98px) {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+	}
+}
+
+// загрузчик
+input[type=file] {
+	display: none;
+}
+
+.form {
+
+	// .form__line
+
+	&__line {}
+
+	// .form__file-upload
+
+	&__file-upload {
+		&.upload {
+			.form__file-label {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			}
+		}
+	}
+
+	// .form__input
+
+	&__input {
+
+		// .form__input_file
+
+		&_file {}
+	}
+
+	// .form__file-label
+
+	&__file-label {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		svg {
+			margin-right: 9px;
+		}
+	}
+
+	// .form__uploaded-files-list
+
+	&__uploaded-files-list {}
+
+	// .form__uploaded-file-item
+
+	&__uploaded-file-item {
+		display: flex;
+		align-items: center;
+	}
+
+	// .form__uploaded-file-name
+
+	&__uploaded-file-name {
+		margin-right: 12px;
+		overflow-wrap: anywhere;
+	}
+
+	// .form__file-remove
+
+	&__file-remove {
+		background: url('../img/icons/close.svg') center/contain no-repeat;
+		width: 16px;
+		height: 16px;
+		cursor: pointer;
+	}
+}

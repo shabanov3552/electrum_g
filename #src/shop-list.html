@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Список покупок"
+})
+
+<body>
+	@@include('_preloader.html',{})
+	<div class="wrapper">
+		@@include('_header.html',{})
+		@@include('_breadcrumbs.html',{
+		"last_item":"Список покупок"
+		})
+		<!-- к section добавлять класс shop-list_empty если в список ничего не добавлено -->
+		<section class="shop-list">
+			<div class="shop-list__header">
+				<h1 class="shop-list__title title-h2Hel">Список покупок</h1>
+				<div class="shop-list__subtitle">Цена и наличие на 01.01.2022, 6:00</div>
+			</div>
+			<div class="shop-list__main">
+				<div class="shop-list__buttons">
+					<a href="" class="shop-list__btn btn-15 btn-15_blck">Отправить по Email</a>
+					<a href="" onclick="window.print();return false;" class="shop-list__btn btn-15 btn-15_blck">Распечатать</a>
+					<a href="" class="shop-list__btn">
+						<img src="img/icons/remove.svg" alt="">
+						<span>Очистить все</span>
+					</a>
+				</div>
+				<ul class="shop-list__list">
+					<li class="shop-list__item item-shop-list">
+						<div class="item-shop-list__image"><img src="img/catalog/img_1.png" alt=""></div>
+						<div class="item-shop-list__center">
+							<div class="item-shop-list__name">НИИ-05 диэл. инструмент (™КВТ) Состав набора: трещётка 250мм, Т-образная рукоятка 200мм, удлинители 125, 250мм, шестигр.головки 1/2” : – 10, 12, 13, 14, 17, 19, 22, 24, 27, 32, шестигранные ключи 4, 5, 6, 8, 10, присоед. квадрат 1/2 дюйма</div>
+							<div class="item-shop-list__article">Артикул 1231234</div>
+						</div>
+						<div class="item-shop-list__price">
+							<div class="card-modal__prices">
+								<div class="card-modal__price">2430 ₽/шт.</div>
+							</div>
+							<div class="card-modal__quantity">
+								<div class="quantity">
+									<div class="quantity__button quantity__button_minus _icon-minus"></div>
+									<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="66"></div>
+									<div class="quantity__button quantity__button_plus _icon-plus"></div>
+								</div>
+								<div class="card-modal__total"> = 2430 ₽</div>
+							</div>
+						</div>
+						<div class="item-shop-list__buttons">
+							<button class="product__btn product__btn_compare">
+								<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 0C14.6716 0 14 0.671573 14 1.5V16.5C14 17.3284 14.6716 18 15.5 18C16.3284 18 17 17.3284 17 16.5V1.5C17 0.671573 16.3284 0 15.5 0ZM0 6.5C0 5.67157 0.671573 5 1.5 5C2.32843 5 3 5.67157 3 6.5V16.5C3 17.3284 2.32843 18 1.5 18C0.671573 18 0 17.3284 0 16.5V6.5ZM7 12.5C7 11.6716 7.67157 11 8.5 11C9.32843 11 10 11.6716 10 12.5V16.5C10 17.3284 9.32843 18 8.5 18C7.67157 18 7 17.3284 7 16.5V12.5Z" fill="#004EA6"></path>
+								</svg>
+								<span class="cards_tooltip">Сравнить</span>
+							</button>
+							<button type="submit" class="item-shop-list__delete button">
+								<img src="img/icons/remove.svg" alt="">
+							</button>
+							<span class="product__add-basket btn-15 add-basket">В корзину</span>
+						</div>
+					</li>
+					<li class="shop-list__item item-shop-list">
+						<div class="item-shop-list__image"><img src="img/catalog/img_1.png" alt=""></div>
+						<div class="item-shop-list__center">
+							<div class="item-shop-list__name">Щиток ЩУНС 1х3+1х6-СЭ1-IP54-У1 Узола (3модуля под пломбировку + 6модулей, окно) 370х250х126мм</div>
+							<div class="item-shop-list__article">Артикул 1231234</div>
+						</div>
+						<div class="item-shop-list__price">
+							<div class="card-modal__prices">
+								<div class="card-modal__price">2430 ₽/шт.</div>
+							</div>
+							<div class="card-modal__quantity">
+								<div class="quantity">
+									<div class="quantity__button quantity__button_minus _icon-minus"></div>
+									<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="666"></div>
+									<div class="quantity__button quantity__button_plus _icon-plus"></div>
+								</div>
+								<div class="card-modal__total"> = 6666666 ₽</div>
+							</div>
+						</div>
+						<div class="item-shop-list__buttons">
+							<button class="product__btn product__btn_compare">
+								<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 0C14.6716 0 14 0.671573 14 1.5V16.5C14 17.3284 14.6716 18 15.5 18C16.3284 18 17 17.3284 17 16.5V1.5C17 0.671573 16.3284 0 15.5 0ZM0 6.5C0 5.67157 0.671573 5 1.5 5C2.32843 5 3 5.67157 3 6.5V16.5C3 17.3284 2.32843 18 1.5 18C0.671573 18 0 17.3284 0 16.5V6.5ZM7 12.5C7 11.6716 7.67157 11 8.5 11C9.32843 11 10 11.6716 10 12.5V16.5C10 17.3284 9.32843 18 8.5 18C7.67157 18 7 17.3284 7 16.5V12.5Z" fill="#004EA6"></path>
+								</svg>
+								<span class="cards_tooltip">Сравнить</span>
+							</button>
+							<button type="submit" class="item-shop-list__delete button">
+								<img src="img/icons/remove.svg" alt="">
+							</button>
+							<span class="product__add-basket btn-15 add-basket">В корзину</span>
+						</div>
+					</li>
+					<li class="shop-list__item item-shop-list">
+						<div class="item-shop-list__image"><img src="img/catalog/img_1.png" alt=""></div>
+						<div class="item-shop-list__center">
+							<div class="item-shop-list__name">Изолятор ОФП-1 (А-645М)</div>
+							<div class="item-shop-list__article">Артикул 1231234</div>
+						</div>
+						<div class="item-shop-list__price">
+							<div class="card-modal__prices">
+								<div class="card-modal__price">2430 ₽/шт.</div>
+							</div>
+							<div class="card-modal__quantity">
+								<div class="quantity">
+									<div class="quantity__button quantity__button_minus _icon-minus"></div>
+									<div class="quantity__input"><input autocomplete="off" type="text" name="form[]" value="6"></div>
+									<div class="quantity__button quantity__button_plus _icon-plus"></div>
+								</div>
+								<div class="card-modal__total"> = 2430 ₽</div>
+							</div>
+						</div>
+						<div class="item-shop-list__buttons">
+							<button class="product__btn product__btn_compare">
+								<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 0C14.6716 0 14 0.671573 14 1.5V16.5C14 17.3284 14.6716 18 15.5 18C16.3284 18 17 17.3284 17 16.5V1.5C17 0.671573 16.3284 0 15.5 0ZM0 6.5C0 5.67157 0.671573 5 1.5 5C2.32843 5 3 5.67157 3 6.5V16.5C3 17.3284 2.32843 18 1.5 18C0.671573 18 0 17.3284 0 16.5V6.5ZM7 12.5C7 11.6716 7.67157 11 8.5 11C9.32843 11 10 11.6716 10 12.5V16.5C10 17.3284 9.32843 18 8.5 18C7.67157 18 7 17.3284 7 16.5V12.5Z" fill="#004EA6"></path>
+								</svg>
+								<span class="cards_tooltip">Сравнить</span>
+							</button>
+							<button type="submit" class="item-shop-list__delete button">
+								<img src="img/icons/remove.svg" alt="">
+							</button>
+							<span class="product__add-basket btn-15 add-basket">В корзину</span>
+						</div>
+					</li>
+				</ul>
+				<div class="shop-list__total">
+					<div class="shop-list__total-left">
+						Всего товаров: 5
+					</div>
+					<div class="shop-list__total-right">
+						Итого: <span class="shop-list__total-price">6666 ₽</span>
+					</div>
+				</div>
+			</div>
+			<div class="shop-list__empty">
+				<div class="shop-list__title">Список покупок пока пуст</div>
+				<div class="shop-list__subtitle">Просто добавьте сюда товары, распечатайте список и пользуйтесь им в магагзине.</div>
+			</div>
+		</section>
+		@@include('_footer.html',{})
+	</div>
+
+	@@include('_js.html',{})
+
+
+</body>
+
+</html>

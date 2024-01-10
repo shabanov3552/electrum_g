@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Вакансии"
+})
+
+<body>
+	@@include('_preloader.html',{})
+	<div class="wrapper">
+		@@include('_header.html',{})
+		@@include('_breadcrumbs.html',{
+		"last_item":"Вакансии"
+		})
+		<section class="jobs">
+			<h1 class="jobs__title title-h2Hel">Вакансии</h1>
+			<div class="jobs__desc">
+				<div class="jobs__desc-col">
+					<p>ООО «Электрум» – это активно развивающаяся компания, у нас работают опытные специалисты высокой квалификации, и каждый сотрудник является профессионалом в своей области. Если Вы готовы выстраивать свою карьеру, хорошо зарабатывать и развиваться вместе с нами , тогда ждем Вас в нашей команде. Мы заинтересованы в привлечении настоящих профессионалов, а также начинающих специалистов. </p>
+				</div>
+				<div class="jobs__desc-col">
+					<p>Если Вы не нашли подходящую вакансию, но уверены, что принесёте пользу компании, пришлите нам своё резюме, и мы обязательно свяжемся с Вами при необходимости.</p>
+
+					<p>Резюме можно направить через <a href="#jobs-form">форму обратной связи</a> или на почту <a href="mailto:info@tdel.pro">info@tdel.pro</a>. Также для уточнения информации вы можете позвонить по номеру: <a href="tel:88002004734">8 800 200 47 34</a></p>
+				</div>
+			</div>
+			<ul class="jobs__list">
+				<li class="jobs__item">
+					<div class="vacancy">
+						<div class="vacancy__title">Менеджер по продажам</div>
+						<div class="vacancy__desc">Пару строк описания</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Требования</div>
+							<div class="vacancy__text">Образование высшее, опыт работы в продажах строительной отрасли – от 3 лет. Опытный пользователь ПК (Word, Excel, 1C, Outlook). Коммуникабельность, активность, внимательность, ответственность, грамотная речь, умение управлять отношениями с клиентами.</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Обязанности</div>
+							<div class="vacancy__text">Работа с клиентами, консультирование, презентация всех предоставляемых видов услуг, оформление договоров, составление коммерческих предложений, ведение и расширение клиентской базы.</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Условия работы</div>
+							<div class="vacancy__text">Пятидневная рабочая неделя с 8.00 до 17.00</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Заработная плата</div>
+							<div class="vacancy__text">Официальное трудоустройство, заработная плата от 30 000 рублей (% от заключенных договоров).</div>
+						</div>
+					</div>
+				</li>
+				<li class="jobs__item">
+					<div class="vacancy">
+						<div class="vacancy__title">Менеджер по продажам</div>
+						<div class="vacancy__desc">Пару строк описания</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Требования</div>
+							<div class="vacancy__text">Образование высшее, опыт работы в продажах строительной отрасли – от 3 лет. Опытный пользователь ПК (Word, Excel, 1C, Outlook). Коммуникабельность, активность, внимательность, ответственность, грамотная речь, умение управлять отношениями с клиентами.</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Обязанности</div>
+							<div class="vacancy__text">Работа с клиентами, консультирование, презентация всех предоставляемых видов услуг, оформление договоров, составление коммерческих предложений, ведение и расширение клиентской базы.</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Условия работы</div>
+							<div class="vacancy__text">Пятидневная рабочая неделя с 8.00 до 17.00</div>
+						</div>
+						<div class="vacancy__row">
+							<div class="vacancy__name">Заработная плата</div>
+							<div class="vacancy__text">Официальное трудоустройство, заработная плата от 30 000 рублей (% от заключенных договоров).</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+
+			<div class="jobs__form" id="jobs-form">
+				<div class="jobs__form-col">
+					<div class="jobs__form-title">Обратная связь</div>
+					<div class="jobs__form-desc">Отправьте прямое письмо для директора и мы свяжемся с вами в ближайшее время для уточнения деталей</div>
+				</div>
+				<div class="jobs__form-col">
+					<form method="" action="" class="form form-modal-feedback modal-feedback__forms">
+						<div class="form__line">
+							<input autocomplete="off" type="text" name="name" data-error="Введите ваше имя" data-value="Ваше имя*" class="form__input input _req is-active">
+						</div>
+						<div class="form__line">
+							<input autocomplete="off" type="tel" name="phone" data-error="Введите телефон" data-value="Ваш телефон*" class="form__input input _req _phone is-active">
+						</div>
+						<div class="form__line">
+							<input autocomplete="off" type="text" name="email" data-error="E-mail" data-value="E-mail" class="form__input input _email is-active">
+						</div>
+						<div class="form__line">
+							<textarea autocomplete="off" name="info" data-value="Комментарий" data-error="" class="form__input input"></textarea>
+						</div>
+						<div class="form__line">
+							<div class="form__file-upload">
+								<input type="file" name="" id="filePrivate">
+							</div>
+						</div>
+						<button type="submit" class="form__btn btn-15">Отправить</button>
+						<div class="form__checkbox">
+							<label class="checkbox">
+								<input data-error="" class="checkbox__input _req is-active" type="checkbox" value="1" name="ch">
+								<span class="checkbox__text">Я даю своё <a href="#modal-consent" class="checkbox__link _popup-link">согласие на обработку персональных данных</a></span>
+							</label>
+						</div>
+					</form>
+
+
+
+					<script>
+						function isEmpty(obj) {
+							for (let key in obj) {
+								// если тело цикла начнет выполняться - значит в объекте есть свойства
+								return false;
+							}
+							return true;
+						}
+
+						const element = (tag, classes = [], content, attributes = {}) => {
+							const node = document.createElement(tag)
+
+
+							if (classes.length) {
+								node.classList.add(...classes)
+							}
+
+							if (content) {
+								node.insertAdjacentHTML('afterbegin', content)
+							}
+							if (!isEmpty(attributes)) {
+								Object.entries(attributes)
+									.filter(([k, v]) => {
+										node.setAttribute(k, v)
+									})
+							}
+							return node
+						}
+
+						function upload(selector, options = {}) {
+
+							let files = [];
+							const input = document.querySelector(selector);
+							input.classList.add('form__input', 'form__input_file');
+							const preview = element('ul', ['form__uploaded-files-list']);
+							const open = element('label', ['form__file-label'],
+								`<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M15.9051 8.946L11.1904 18.845C10.7181 19.846 9.51436 20.279 8.50183 19.812L1.16831 16.431C0.155774 15.964 -0.282214 14.774 0.190166 13.773L6.18747 1.155C6.65884 0.154 7.86255 -0.279 8.87609 0.188L13.4593 2.301C14.4718 2.768 14.9098 3.958 14.4374 4.959L10.1506 13.952C9.67823 14.953 8.47452 15.386 7.46199 14.919L5.62911 14.074C4.61557 13.607 4.17758 12.417 4.64996 11.416L7.65417 5.142C7.89087 4.641 8.49273 4.425 8.99849 4.658C9.50526 4.892 9.72375 5.487 9.48806 5.987L6.91172 11.355C6.67502 11.855 6.89452 12.45 7.40028 12.684C7.90705 12.917 8.50891 12.701 8.74459 12.2L12.1767 5.021C12.4124 4.52 12.1939 3.924 11.6871 3.691L8.93678 2.423C8.43102 2.19 7.82917 2.406 7.59348 2.907L2.45294 13.708C2.21523 14.211 2.43574 14.808 2.94454 15.043L8.43608 17.575C8.94487 17.809 9.54976 17.592 9.78646 17.089L14.0713 8.101C14.308 7.6 14.9098 7.384 15.4156 7.617C15.9223 7.85 16.1408 8.446 15.9051 8.946Z" fill="#000"/>
+								</svg>
+
+								<span>Прикрепите файл</span>`);
+							const spanAccept = element('span', [], options.accept);
+							const textElementP = element('p', [], 'Перетащите сюда файл');
+							const textElementSpan = element('span', [], 'или');
+
+							// const upload = element('button', ['btn', 'primary'], 'Загрузить');
+							// upload.style.display = 'none';
+
+							if (options.multi) {
+								input.setAttribute('multiple', true);
+							}
+
+							if (options.accept && Array.isArray(options.accept)) {
+								input.setAttribute('accept', options.accept.join(','))
+							}
+
+							input.parentElement.insertAdjacentElement('afterend', preview);
+							// input.parentElement.insertAdjacentElement('afterbegin', textElementSpan);
+							// input.parentElement.insertAdjacentElement('afterbegin', textElementP);
+							// input.insertAdjacentElement('afterend', spanAccept);
+							input.insertAdjacentElement('afterend', open);
+
+
+							const triggerInput = () => input.click();
+
+							const changeHandler = event => {
+
+								if (!event.target.files.length) {
+									return
+								}
+
+								if (!options.multi) {
+									preview.innerText = ''
+								}
+
+								files = Array.from(event.target.files);
+
+								// preview.innerHTML = '';
+
+								// upload.style.display = 'inline';
+
+								files.forEach(file => {
+
+									// if (!file.type.match('image')) {
+									// 	return
+									// }
+
+									const reader = new FileReader()
+
+									reader.onload = ev => {
+										const src = ev.target.result;
+
+										preview.insertAdjacentHTML('afterbegin', `
+										<li class="form__uploaded-file-item">
+											<span class="form__uploaded-file-name">${file.name}</span>
+											<div class="form__file-remove" data-name="${file.name}" ></div>
+										</li>
+										`)
+									}
+
+									reader.readAsDataURL(file)
+								});
+								input.parentElement.classList.add('upload')
+							}
+
+							const removeHandler = event => {
+								if (!event.target.dataset.name) {
+									return
+								}
+
+								const { name } = event.target.dataset
+								files = files.filter(file => file.name !== name);
+
+								// if (!files.length) {
+								// 	upload.style.display = "none";
+								// }
+
+								const block = preview
+									.querySelector(`[data-name="${name}"]`)
+									.closest('.form__uploaded-file-item')
+
+								block.classList.add('removing');
+								setTimeout(() => block.remove(), 300);
+								setTimeout(() => input.parentElement.classList.remove('upload'), 300);
+							}
+
+							open.addEventListener('click', triggerInput);
+							input.addEventListener('change', changeHandler);
+							preview.addEventListener("click", removeHandler)
+						}
+						upload('#filePrivate', {
+							multi: false,
+							// accept: ['.pdf', '.doc'],
+						})
+					</script>
+				</div>
+			</div>
+		</section>
+		@@include('_footer.html',{})
+	</div>
+
+	@@include('_js.html',{})
+</body>
+
+</html>

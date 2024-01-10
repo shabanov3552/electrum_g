@@ -1,0 +1,53 @@
+.pagging {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px 0px 80px 0px;
+	padding: 0px 0px 0px 29%;
+	@media (max-width: 1440px) {
+		padding: 0px 0px 0px 39%;
+	}
+	@media (max-width: 1250px) {
+		padding: 0px 0px 0px 0px;
+	}
+	// .pagging__arrow
+	&__arrow {
+		margin: 0px 25px;
+		@media (max-width: $md5+px) {
+			margin: 0px 15px;
+		}
+		@media (max-width: 390px) {
+			margin: 0px 10px;
+		}
+	}
+	// .pagging__list
+	&__list {
+		display: flex;
+		li {
+		}
+	}
+	// .pagging__item
+	&__item {
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 36px;
+		transition: all 0.3s ease 0s;
+		margin: 0px 15px;
+		color: #141414;
+		&._active {
+			color: #004ea6;
+			border-bottom: 2px solid #004ea6;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		@media (max-width: $md5+px) {
+			margin: 0px 10px;
+		}
+		@media (max-width: 380px) {
+			margin: 0px 7px;
+		}
+	}
+}

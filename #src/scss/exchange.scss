@@ -1,0 +1,45 @@
+//====================================================================================================
+.exchange {
+	max-width: 735px;
+	@include adaptiv-value("margin-bottom", 120, 40, 1);
+
+	// .exchange__title
+
+	&__title {
+		margin: 0px 0px 40px 0px;
+	}
+
+	// .exchange__text
+
+	&__text {
+		font-size: 18px;
+		line-height: 24px;
+		margin: 0px 0px 20px 0px;
+	}
+
+	// .exchange__list
+
+	&__list {
+		margin: 0px 0px 20px 0px;
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	// .exchange__item
+
+	&__item {
+		margin: 0px 0px 10px 0px;
+		list-style: disc;
+		margin-left: 19px;
+		padding-left: 10px;
+	}
+	& ul {
+		margin: 0px 0px 20px 0px;
+	}
+	& li {
+		margin: 0 0 10px 0;
+		list-style: disc;
+		margin-left: 19px;
+		padding-left: 10px;
+	}
+}

@@ -1,0 +1,6 @@
+@@include('libs/smoothScroll.js', {})
+@@include('libs/swiper.min.js', {})
+@@include('libs/inputmask.min.js', {})
+@@include('libs/simplebar.js', {})
+@@include('libs/jquery.nice-select.min.js', {})
+@@include('libs/lightgallery.min.js', {})

@@ -1,0 +1,159 @@
+//====================================================================================================
+.detail-brend {
+	margin: 0px 0px 60px 0px;
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 80px 0px;
+	}
+	@media (max-width: $md4+px) {
+		margin: 0px 0px 40px 0px;
+	}
+	// .detail-brand__title
+
+	&__title {
+		margin: 0px 0px 40px 0px;
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .detail-brand__content
+
+	&__content {
+		display: flex;
+	}
+
+	// .detail-brand__tabs-block
+
+	&__tabs-block {
+		flex: 0 1 50%;
+		@media (max-width: $md3+px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	// .detail-brand__nav
+
+	&__nav {
+		margin: 0px 0px 30px 0px;
+	}
+
+	// .detail-brand__nav-item
+
+	&__nav-item {
+		&:first-child {
+			margin: 0px 40px 0px 0px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 18px;
+		}
+	}
+
+	// .detail-brand__block
+
+	&__block {
+	}
+
+	// .detail-brand__text
+
+	&__text {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 400;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md4+px) {
+			font-size: 14px;
+			line-height: 16px;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .detail-brand__link
+
+	&__link {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 600;
+		color: #004ea6;
+	}
+
+	// .detail-brand__catalog
+
+	&__catalog {
+		display: flex;
+		align-items: center;
+		margin: 0px 0px 40px 0px;
+		svg {
+			flex-shrink: 0;
+		}
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .detail-brand__text-link
+
+	&__text-link {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #004ea6;
+		margin: 0px 0px 0px 10px;
+		@media (max-width: $md4+px) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+
+	// .detail-brand__logo
+
+	&__logo {
+		flex: 0 1 50%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		@media (max-width: $md3+px) {
+			display: none;
+		}
+	}
+}
+.category-brend {
+	margin: 0px 0px 120px 0px;
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 80px 0px;
+	}
+	@media (max-width: $md4+px) {
+		margin: 0px 0px 60px 0px;
+	}
+	// .category-brend__title
+
+	&__title {
+		margin: 0px 0px 40px 0px;
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	// .category-brend__content
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// .category-brend__category
+
+	&__category {
+		flex: 0 1 50%;
+		.category__name {
+			color: #141414;
+		}
+		&:hover {
+			.category__name {
+				color: #fff;
+			}
+		}
+		@media (max-width: $md2+px) {
+			flex: 1 1 100%;
+		}
+	}
+}

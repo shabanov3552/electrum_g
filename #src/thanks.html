@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Главная"
+})
+
+<body>
+	@@include('_preloader.html',{})
+	<div class="wrapper">
+
+		@@include('_header.html',{})
+		@@include('_breadcrumbs.html',{})
+		<section class="thanks-page">
+			<div class="thanks-page__block">
+				<div class="thanks-page__title big-title">Ваш заказ успешно оформлен!</div>
+				<div class="thanks-page__order">Номер заказа <span class="thanks-page__order-num">9876</span></div>
+				<div class="thanks-page__row">
+					<div class="thanks-page__text">Вы можете следить за выполнением заказа в <a href="" class="thanks-page__link">Личном кабинете</a></div>
+					<a href="" class="thanks-page__btn  btn-15 btn-15_wht">Вернуться на главную</a>
+				</div>
+				<div class="thanks-page__logo _ibg">
+					<img src="img/feedback_logo.svg" alt="">
+				</div>
+			</div>
+		</section>
+		@@include('_footer.html',{})
+	</div>
+	@@include('_js.html',{})
+</body>
+
+</html>
