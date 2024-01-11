@@ -115,6 +115,7 @@
 
 	&__image {
 		overflow: hidden;
+		position: -webkit-sticky;
 		position: sticky;
 		top: 50px;
 
@@ -219,6 +220,13 @@
 		line-height: 58px;
 		font-family: heliosextblack;
 		max-width: 595px;
+		text-align: center;
+
+		.certificates_main & {
+			max-width: none;
+			text-align: center;
+			margin-bottom: 50px;
+		}
 
 		@media (max-width: $md2+px) {
 			font-size: 24px;
@@ -282,6 +290,10 @@
 	&__slide {
 		height: 545px;
 		display: flex;
+
+		.certificates_main & {
+			height: 250px;
+		}
 
 		@media (max-width: 1366px) {
 			height: 685px;

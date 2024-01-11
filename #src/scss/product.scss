@@ -82,6 +82,7 @@
 	&__wrapper {
 		@media (min-width: 1180px) {
 			position: sticky;
+			position: -webkit-sticky;
 			top: 50px;
 		}
 	}
@@ -93,6 +94,7 @@
 
 	&__title {
 		margin: 0px 0px 30px 0px;
+		overflow-wrap: anywhere;
 
 		@media (max-width: 1440px) {
 			font-size: 24px;
@@ -205,13 +207,15 @@
 	}
 
 	&__btns {
-		@media (max-width: 1180px) {
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
+		@media (max-width: 1180px) and (min-width: 880.98px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 58px);
 		}
 
-		@media (max-width: 880px) {
+		@media (max-width: 880.98px) {
+			display: flex;
+			justify-content: space-between;
 			flex-wrap: wrap;
 		}
 	}
@@ -250,7 +254,10 @@
 		margin: 0px 0px 20px 0px;
 
 		@media (max-width: 1180px) and (min-width: 880.98px) {
-			order: 3;
+			grid-column-start: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		@media (max-width: 880px) {
@@ -272,6 +279,13 @@
 
 		@media (max-width: 1180px) and (min-width: 1170px) {
 			margin-right: 10px;
+		}
+
+		@media (max-width: 1180px) and (min-width: 880.98px) {
+			grid-row-start: 1;
+			grid-column-start: 2;
+			grid-row-end: 4;
+			align-items: flex-start;
 		}
 
 		@media (max-width: 880px) {
@@ -307,9 +321,12 @@
 		@media (max-width: $md5+px) {
 			font-size: 12px;
 			line-height: 12px;
+			height: 20px;
+			display: flex;
+			align-items: center;
 
 			svg {
-				margin: 0px 0px 0px 0px;
+				margin: 0px 5px 0px 0px;
 			}
 		}
 
@@ -336,13 +353,25 @@
 			}
 		}
 
-		&_compare {}
+		&_compare {
+			@media (max-width: $md5+px) {
+				&::before {
+					left: -20px;
+					top: 2px;
+				}
+			}
+		}
 
 		&_bye {
 			flex: 1 1 100%;
 			display: flex;
 			justify-content: center;
 			margin: 20px 0px 0px 0px;
+
+			@media (max-width: 1180px) and (min-width: 880.98px) {
+				grid-column-start: 1;
+				margin-bottom: 10px;
+			}
 
 			@media (max-width: 880px) {
 				display: inline-block;
@@ -357,6 +386,15 @@
 	}
 
 	&__info {}
+}
+
+@media (max-width: 479.98px) {
+
+	.product__add-shop-list,
+	.product__btn_bye {
+		font-size: 14px;
+		line-height: 16px;
+	}
 }
 
 .slider-product {
@@ -395,7 +433,7 @@
 	}
 
 	&__nav {
-		height: 580px;
+		height: 500px;
 		width: 180px;
 
 		@media (max-width: $md3+px) {

@@ -2,6 +2,7 @@
 .search-result {
 	display: flex;
 	flex-wrap: wrap;
+
 	@media (max-width: 1180px) {
 		display: block;
 	}
@@ -9,6 +10,7 @@
 	&__title {
 		margin: 0px 0px 40px 0px;
 		flex: 1 1 100%;
+
 		@media (max-width: $md4+px) {
 			margin: 0px 0px 20px 0px;
 		}
@@ -21,24 +23,28 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		@media (max-width: 1600px) {
 			padding: 0;
 		}
+
 		@media (max-width: $md2+px) {
 			flex-wrap: wrap;
 			justify-content: flex-start;
 		}
+
 		@media (max-width: 840px) {
 			display: block;
 		}
+
 		@media (max-width: $md4+px) {
 			margin: 0px 0px 20px 0px;
 		}
 	}
+
 	// .search-result__empty
 
-	&__empty {
-	}
+	&__empty {}
 
 	// .search-result__text
 
@@ -46,9 +52,11 @@
 		font-size: 18px;
 		line-height: 24px;
 		font-weight: 600;
+
 		@media (max-width: $md2+px) {
 			margin: 0px 0px 10px 0px;
 		}
+
 		@media (max-width: $md5+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -63,15 +71,19 @@
 
 	// .search-result__count
 
-	&__count {
-	}
+	&__count {}
 
 	&__sort {
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+		}
 	}
 
 	&__wrapper {
 		display: flex;
 		margin: 0px 0px 40px 0px;
+		width: 100%;
+
 		@media (max-width: 840px) {
 			display: block;
 		}
@@ -87,6 +99,7 @@
 				transition: all 0.3s ease 0s;
 				background: url(../img/icons/arrow_down_black.svg) center center no-repeat;
 			}
+
 			.catalog__category-btn._active::after {
 				transform: rotate(-180deg);
 			}
@@ -107,8 +120,7 @@
 		font-weight: 600;
 	}
 
-	&__category-content {
-	}
+	&__category-content {}
 
 	&__category-link {
 		display: block;
@@ -116,9 +128,11 @@
 		line-height: 24px;
 		font-weight: 600;
 		color: #828282;
+
 		&:not(:last-child) {
 			margin: 0px 0px 18px 0px;
 		}
+
 		&._active {
 			color: #004ea6;
 			border-bottom: 2px solid #004ea6;
@@ -130,16 +144,20 @@
 		display: flex;
 		flex-flow: row wrap;
 		align-self: flex-start;
+
 		&_col {
 			.card {
 				flex: 0 1 25%;
 				padding: 22px 40px;
+
 				@media (max-width: 1770px) {
 					flex: 0 1 33.333%;
 				}
+
 				@media (max-width: 1250px) {
 					flex: 1 1 50%;
 				}
+
 				@media (max-width: $md4+px) {
 					flex: 0 1 50%;
 					padding: 10px;
@@ -148,9 +166,10 @@
 		}
 	}
 
-	&__card {
-	}
+	&__card {}
+
 	.pagging {
 		padding: 0;
+		margin: 40px 0px 40px 0px;
 	}
 }

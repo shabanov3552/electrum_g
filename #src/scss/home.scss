@@ -703,11 +703,24 @@
 
 	// .not-found__empty
 
-	&__empty {}
+	&__empty {
+		.empty {
+			picture {
+				@media (max-width: $md4+px) {
+					display: none;
+				}
+			}
+		}
+	}
 
 	.empty {
 		display: flex;
 		justify-content: flex-end;
+
+		@media (max-width: $md4+px) {
+			justify-content: flex-start;
+		}
+
 		// .empty__img
 
 		&__img {

@@ -8,12 +8,15 @@
 		.shop-list__title {
 			margin-right: 0;
 		}
+
 		.shop-list__main {
 			display: none;
 		}
+
 		.shop-list__header .shop-list__subtitle {
 			display: none;
 		}
+
 		.shop-list__empty {
 			display: flex;
 		}
@@ -21,8 +24,7 @@
 
 	// .shop-list__main
 
-	&__main {
-	}
+	&__main {}
 
 	// .shop-list__header
 
@@ -52,6 +54,7 @@
 	&__buttons {
 		display: flex;
 		margin-bottom: 30px;
+
 		@media (max-width: 939.98px) {
 			flex-wrap: wrap;
 		}
@@ -62,13 +65,16 @@
 	&__btn {
 		&:first-child {
 			margin-right: 25px;
+
 			@media (max-width: 524px) {
 				margin-bottom: 15px;
 			}
+
 			@media (max-width: 479.98px) {
 				margin-right: 0;
 			}
 		}
+
 		&:not(:last-child) {
 			height: 40px;
 			display: flex;
@@ -77,10 +83,12 @@
 			width: 240px;
 			border-radius: 6px;
 			flex: 0 0 240px;
+
 			@media (max-width: 479.98px) {
 				flex: 1 1 100%;
 			}
 		}
+
 		&:last-child {
 			flex: 1 1 auto;
 			display: flex;
@@ -89,9 +97,11 @@
 			font-weight: 500;
 			font-size: 18px;
 			color: #000;
+
 			img {
 				margin-right: 8px;
 			}
+
 			@media (max-width: 939.98px) {
 				flex: 1 1 100%;
 				margin-top: 30px;
@@ -108,14 +118,14 @@
 
 	// .shop-list__item
 
-	&__item {
-	}
+	&__item {}
 
 	// .shop-list__total
 
 	&__total {
 		font-weight: 500;
 		font-size: 20px;
+
 		@media (min-width: 479.98px) {
 			display: flex;
 			justify-content: space-between;
@@ -124,8 +134,7 @@
 
 	// .shop-list__total-left
 
-	&__total-left {
-	}
+	&__total-left {}
 
 	// .shop-list__total-right
 
@@ -133,6 +142,7 @@
 		@media (min-width: 939.98px) {
 			margin-right: 200px;
 		}
+
 		@media (max-width: 479.98px) {
 			margin-top: 15px;
 		}
@@ -144,6 +154,7 @@
 		font-weight: 600;
 		font-size: 24px;
 		margin-left: 30px;
+
 		@media (max-width: 479.98px) {
 			margin-left: 10px;
 		}
@@ -159,10 +170,12 @@
 		text-align: center;
 		margin-bottom: 50px;
 		display: none;
+
 		.shop-list__title {
 			margin-bottom: 30px;
 			font-size: 30px;
 			font-weight: 600;
+
 			@media (max-width: 767px) {
 				font-size: 24px;
 			}
@@ -180,12 +193,15 @@
 	display: flex;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	padding: 20px;
+
 	&:not(:last-child) {
 		border-bottom: transparent;
 	}
+
 	@media (max-width: 1280px) {
 		flex-wrap: wrap;
 	}
+
 	@media (max-width: 939.98px) and (min-width: 479.98px) {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -197,10 +213,12 @@
 			"center center"
 			"price buttons";
 	}
+
 	@media (max-width: 479.98px) {
 		padding: 15px;
 		display: block;
 	}
+
 	// .item-shop-list__image
 
 	&__image {
@@ -208,11 +226,13 @@
 		height: 100px;
 		flex: 0 0 100px;
 		margin-right: 25px;
+
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: scale-down;
 		}
+
 		@media (max-width: 939.98px) {
 			margin-bottom: 15px;
 			width: 100%;
@@ -228,10 +248,12 @@
 		margin-right: 30px;
 		display: flex;
 		flex-direction: column;
+
 		@media (max-width: 1280px) {
 			flex: 0 1 80%;
 			margin-right: 0;
 		}
+
 		@media (max-width: 939.98px) {
 			flex: none;
 			margin-bottom: 15px;
@@ -248,9 +270,15 @@
 		font-size: 20px;
 		line-height: 24px;
 		flex: 1 1 auto;
+
+		a {
+			color: #000;
+		}
+
 		@media (max-width: 1280px) {
 			max-width: none;
 		}
+
 		@media (max-width: 939.98px) {
 			font-size: 18px;
 		}
@@ -269,11 +297,13 @@
 	&__price {
 		margin-right: 20px;
 		flex: 0 0 275px;
+
 		@media (max-width: 1280px) {
 			margin-top: 30px;
 			flex: 1 1 auto;
 			margin-left: 125px;
 		}
+
 		@media (max-width: 939.98px) {
 			flex: none;
 			margin: 0;
@@ -290,28 +320,30 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-content: flex-start;
+
 		.product__add-basket {
 			margin-bottom: 0;
 			margin-top: 15px;
 		}
+
 		@media (max-width: 1280px) {
 			margin-top: 30px;
 		}
+
 		@media (max-width: 939.98px) {
 			flex: none;
 			grid-area: buttons;
 		}
 	}
+
 	.card-modal {
 		// .card-modal__prices
 
-		&__prices {
-		}
+		&__prices {}
 
 		// .card-modal__price
 
-		&__price {
-		}
+		&__price {}
 
 		// .card-modal__quantity
 
@@ -325,31 +357,30 @@
 
 		&__total {
 			white-space: nowrap;
+
 			@media (max-width: 939.98px) {
 				margin-top: 10px;
 			}
 		}
 	}
 }
+
 .quantity {
 	// .quantity__button
 
 	&__button {
 		// .quantity__button_minus
 
-		&_minus {
-		}
+		&_minus {}
 
 		// .quantity__button_plus
 
-		&_plus {
-		}
+		&_plus {}
 	}
 
 	// .quantity__input
 
-	&__input {
-	}
+	&__input {}
 }
 
 .product {
@@ -358,35 +389,35 @@
 	&__btn {
 		// .product__btn_compare
 
-		&_compare {
-		}
+		&_compare {}
 	}
 
 	// .product__add-basket
 
-	&__add-basket {
-	}
+	&__add-basket {}
 }
+
 .cards {
 	// .cards_tooltip
 
-	&_tooltip {
-	}
+	&_tooltip {}
 }
-.button {
-}
-.add-basket {
-}
+
+.button {}
+
+.add-basket {}
 
 @media print {
 	.wrapper {
 		padding-left: 0;
 	}
+
 	.page,
 	.header {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
 	.breadcrumbs,
 	.footer,
 	.menu-right,
@@ -396,9 +427,11 @@
 	.header__icon {
 		display: none;
 	}
+
 	.shop-list-header .header__info {
 		display: block;
 	}
+
 	.shop-list {
 		margin-top: 20px;
 	}
@@ -406,9 +439,11 @@
 	.header__adress {
 		font-size: 13px;
 	}
+
 	.header__phone {
 		font-size: 22px;
 	}
+
 	.header__mail {
 		font-size: 20px;
 	}
@@ -416,52 +451,66 @@
 	.item-shop-list__name {
 		font-size: 15px;
 	}
+
 	.shop-list__title {
 		font-weight: 700;
 		font-family: "Montserrat";
 		font-size: 46px;
 	}
+
 	.item-shop-list {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 	}
+
 	.item-shop-list__center {
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
 	}
+
 	.item-shop-list__price {
 		all: unset;
 	}
+
 	.item-shop-list {
 		.card-modal__quantity {
 			all: unset;
 		}
+
 		.quantity {
 			all: unset;
 		}
+
 		.quantity__button {
 			display: none;
 		}
+
 		.card-modal__total {
 			all: unset;
 		}
+
 		.quantity__input {
 			all: unset;
 		}
+
 		.quantity__input input {
 			all: unset;
 		}
+
 		.card-modal__price {
 			all: unset;
 		}
+
 		.card-modal__prices {
 			all: unset;
 		}
+
 		.item-shop-list__price {
 			flex: 0 0 190px;
 		}
+
 		.card-modal {
 			// .card-modal__prices
 
@@ -493,6 +542,7 @@
 				font-weight: 900;
 			}
 		}
+
 		.quantity {
 			flex: 0 1 30%;
 
@@ -501,13 +551,11 @@
 			&__button {
 				// .quantity__button_minus
 
-				&_minus {
-				}
+				&_minus {}
 
 				// .quantity__button_plus
 
-				&_plus {
-				}
+				&_plus {}
 			}
 
 			// .quantity__input
@@ -515,11 +563,13 @@
 			&__input {
 				display: flex;
 				align-items: center;
+
 				&::before {
 					content: "x ";
 					font-size: 20px;
 					font-weight: 900;
 				}
+
 				input {
 					width: 100%;
 					font-size: 18px;

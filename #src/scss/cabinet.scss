@@ -5,6 +5,8 @@
 
 .data {
 	display: flex;
+	margin: 0px 0px 30px 0px;
+
 	@media (max-width: 1440px) {
 		display: block;
 	}
@@ -19,14 +21,17 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+
 	@media (max-width: 1440px) {
 		max-width: 100%;
 		flex: 1 1 auto;
 		margin: 0px 0px 30px 0px;
 	}
+
 	@media (max-width: $md4+px) {
 		padding: 20px;
 	}
+
 	// .personal-data__title
 
 	&__title {
@@ -34,18 +39,21 @@
 		line-height: 30px;
 		font-weight: 600;
 		margin: 0px 0px 40px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
 			margin: 0px 0px 20px 0px;
 		}
 	}
+
 	// .personal-data__row
 
 	&__row {
 		display: flex;
 		justify-content: space-between;
 		margin: 0px 0px 20px 0px;
+
 		@media (max-width: $md4+px) {
 			flex-wrap: wrap;
 		}
@@ -59,6 +67,7 @@
 		font-weight: 400;
 		flex: 0 0 43%;
 		margin: 0px 10px 0px 0px;
+
 		@media (max-width: $md4+px) {
 			flex: 1 1 100%;
 			font-size: 14px;
@@ -75,6 +84,7 @@
 		font-weight: 600;
 		overflow: hidden;
 		text-overflow: ellipsis;
+
 		@media (max-width: $md4+px) {
 			flex: 1 1 100%;
 			font-size: 14px;
@@ -98,57 +108,70 @@
 		display: flex;
 		justify-content: center;
 		max-width: 260px;
+
 		&:nth-child(1) {
 			flex: 1 1 auto;
 			margin: 0px 5px 0px 0px;
+
 			@media (max-width: 1440px) {
 				flex: 0 1 33.333%;
 				margin: 0px 0px 0px 0px;
 			}
+
 			@media (max-width: 1190px) {
 				flex: 1 1 auto;
 				margin: 0px 5px 0px 0px;
 			}
+
 			@media (max-width: $md4+px) {
 				flex: 1 1 100%;
 				margin: 0px 0px 20px 0px;
 			}
 		}
+
 		&:nth-child(2) {
 			flex: 1 1 auto;
 			margin: 0px 0px 0px 5px;
+
 			@media (max-width: 1440px) {
 				flex: 0 1 33.333%;
 				margin: 0px 0px 0px 0px;
 			}
+
 			@media (max-width: 1190px) {
 				flex: 1 1 auto;
 				margin: 0px 0px 0px 5px;
 			}
+
 			@media (max-width: $md4+px) {
 				flex: 1 1 100%;
 				margin: 0px 0px 20px 0px;
 			}
 		}
+
 		&:nth-child(3) {
 			flex: 1 1 100%;
 			max-width: 100%;
 			margin: 20px 0px 0px 0px;
+
 			@media (max-width: 1440px) {
 				flex: 0 1 33.333%;
 				margin: 0px 0px 0px 0px;
 				max-width: 260px;
 			}
+
 			@media (max-width: 1190px) {
 				flex: 1 1 100%;
 				max-width: 100%;
 				margin: 20px 0px 0px 0px;
 			}
+
 			@media (max-width: $md4+px) {
 				flex: 1 1 100%;
 				margin: 0px 0px 0px 0px;
 			}
 		}
+
 		@media (max-width: 1190px) {
 			max-width: none;
 		}
@@ -162,9 +185,11 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+
 	@media (max-width: $md4+px) {
 		padding: 20px;
 	}
+
 	// .delivery-addresses__title
 
 	&__title {
@@ -172,6 +197,7 @@
 		line-height: 30px;
 		font-weight: 600;
 		margin: 0px 0px 40px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
@@ -187,6 +213,7 @@
 
 		margin: 0px 0px 40px 0px;
 		flex: 1 1 auto;
+
 		@media (max-width: 1440px) {
 			max-width: 100%;
 		}
@@ -206,16 +233,25 @@
 		width: 38px;
 		height: 38px;
 		border-radius: 50%;
-		background-color: #828282;
+		background: #828282 url(../img/icons/check_wht.svg) center center no-repeat;
 		color: #fff;
-		font-size: 14px;
-		line-height: 20;
+		font-size: 0px;
+		line-height: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 0px 20px 0px 0px;
 		flex: 0 0 38px;
+
+		@media (max-width: $md5+px) {
+			width: 15px;
+			height: 20px;
+			flex: 0 0 20px;
+			background-size: 10px;
+			margin: 0 10px 0 0;
+		}
 	}
+
 	// .delivery-addresses__col
 	&__col {
 		display: flex;
@@ -231,6 +267,7 @@
 		font-size: 18px;
 		line-height: 24px;
 		margin: 0px 0px 17px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -244,14 +281,18 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+
 		@media (max-width: 1440px) {
 			width: 65.43%;
 		}
+
 		@media (max-width: 1190px) {
 			width: 100%;
 		}
+
 		@media (max-width: $md3+px) {
 			flex-wrap: wrap;
+			gap: 10px;
 		}
 	}
 
@@ -264,28 +305,34 @@
 		color: #004ea6;
 		text-decoration: underline;
 		white-space: nowrap;
+
 		&:nth-child(1) {
 			flex: 0 0 45%;
+
 			@media (max-width: $md3+px) {
 				order: 1;
 			}
 		}
+
 		&:nth-child(2) {
 			flex: 0 0 25%;
+
 			@media (max-width: $md3+px) {
 				flex: 1 1 100%;
-				margin: 0px 0px 10px 0px;
 				order: 3;
 			}
 		}
+
 		&:nth-child(3) {
 			flex: 0 0 30%;
 			display: flex;
 			justify-content: flex-end;
+
 			@media (max-width: $md3+px) {
 				order: 2;
 			}
 		}
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -311,13 +358,16 @@
 		border-radius: 6px;
 	}
 }
+
 .documents {
 	margin: 30px 0px 30px 0px;
 	border: 1px solid #e0e0e0;
 	padding: 50px 60px;
+
 	@media (max-width: $md4+px) {
 		padding: 20px;
 	}
+
 	// .documents__title
 
 	&__title {
@@ -325,6 +375,7 @@
 		font-size: 24px;
 		line-height: 30px;
 		margin: 0px 0px 40px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
@@ -344,14 +395,17 @@
 		margin: 0px 40px 20px 0px;
 		display: flex;
 		align-items: center;
+
 		@media (max-width: 1440px) {
 			flex: 0 1 50%;
 			margin: 0px 0px 20px 0px;
 			align-items: flex-start;
 		}
+
 		@media (max-width: $md3+px) {
 			flex: 1 1 100%;
 		}
+
 		svg {
 			flex: 0 0 auto;
 		}
@@ -364,16 +418,19 @@
 		line-height: 24px;
 		color: #004ea6;
 		margin: 0px 0px 0px 10px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
 		}
 	}
 }
+
 .orders {
 	& .pagging {
 		padding: 0;
 	}
+
 	// .orders__header
 
 	&__header {
@@ -391,6 +448,7 @@
 		font-size: 36px;
 		line-height: 42px;
 		margin: 0px 20px 20px 0px;
+
 		@media (max-width: $md4+px) {
 			margin: 0px 0px 10px 0px;
 		}
@@ -402,6 +460,7 @@
 		display: flex;
 		align-items: center;
 		margin: 0px 0px 20px 0px;
+
 		@media (max-width: $md4+px) {
 			flex-wrap: wrap;
 		}
@@ -414,6 +473,7 @@
 		font-size: 18px;
 		line-height: 24px;
 		margin: 0px 10px 0px 0px;
+
 		@media (max-width: $md4+px) {
 			margin: 0px 10px 10px 0px;
 			flex: 1 1 100%;
@@ -430,8 +490,7 @@
 
 	// .orders__list
 
-	&__list {
-	}
+	&__list {}
 
 	// .orders__item
 
@@ -445,15 +504,19 @@
 .order {
 	border: 1px solid #e0e0e0;
 	padding: 50px 60px;
+
 	@media (max-width: $md3+px) {
 		padding: 25px 30px;
 	}
+
 	@media (max-width: $md4+px) {
 		padding: 20px;
 	}
+
 	@media (max-width: $md5+px) {
 		padding: 10px;
 	}
+
 	// .order__header
 
 	&__header {
@@ -461,6 +524,7 @@
 		align-items: center;
 		margin: 0px 0px 30px 0px;
 		flex-wrap: wrap;
+
 		@media (max-width: $md4+px) {
 			margin: 0px 0px 10px 0px;
 		}
@@ -474,6 +538,7 @@
 		line-height: 30px;
 		margin: 0px 40px 10px 0px;
 		flex-shrink: 0;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
@@ -482,8 +547,7 @@
 
 	// .order__number
 
-	&__number {
-	}
+	&__number {}
 
 	// .order__status
 
@@ -496,10 +560,12 @@
 		color: #fff;
 		border-radius: 61px;
 		flex-shrink: 0;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
 		}
+
 		@media (max-width: 360px) {
 			font-size: 12px;
 		}
@@ -511,6 +577,7 @@
 		align-items: center;
 		flex-shrink: 0;
 		margin: 0px 0px 10px 0px;
+
 		@media (max-width: 1160px) {
 			flex: 1 1 100%;
 		}
@@ -523,15 +590,18 @@
 		line-height: 24px;
 		color: #004ea6;
 		margin: 0px 0px 0px 10px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
 		}
 	}
+
 	// .order__details
 
 	&__details {
 		display: flex;
+
 		@media (max-width: 1440px) {
 			flex-wrap: wrap;
 		}
@@ -541,11 +611,13 @@
 
 	&__details-col {
 		flex: 0 1 50%;
+
 		@media (min-width: 1440px) {
 			&:first-child {
 				margin: 0px 15px 0px 0px;
 			}
 		}
+
 		@media (max-width: 1440px) {
 			flex: 1 1 100%;
 		}
@@ -557,6 +629,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin: 0px 0px 40px 0px;
+
 		@media (max-width: $md4+px) {
 			flex-wrap: wrap;
 			margin: 0px 0px 20px 0px;
@@ -573,6 +646,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -591,9 +665,11 @@
 		max-width: 475px;
 		overflow: hidden;
 		text-overflow: ellipsis;
+
 		@media (max-width: 1440px) {
 			max-width: none;
 		}
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -609,6 +685,7 @@
 		display: inline-block;
 		border-radius: 6px;
 		text-align: center;
+
 		&._active {
 			margin: 0px 0px 50px 0px;
 		}
@@ -619,6 +696,7 @@
 	&__cards {
 		margin: 50px 0px 0px 0px;
 		position: relative;
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -627,14 +705,17 @@
 			right: -60px;
 			height: 1px;
 			background-color: #e0e0e0;
+
 			@media (max-width: $md3+px) {
 				left: -30px;
 				right: -30px;
 			}
+
 			@media (max-width: $md4+px) {
 				left: -20px;
 				right: -20px;
 			}
+
 			@media (max-width: $md5+px) {
 				left: -10px;
 				right: -10px;
@@ -653,9 +734,9 @@
 
 	// .order__card
 
-	&__card {
-	}
+	&__card {}
 }
+
 .status {
 	// .status__accepted
 
@@ -687,14 +768,17 @@
 		background-color: #eb5757;
 	}
 }
+
 .card-order {
 	display: flex;
 	padding: 20px 22px;
+
 	@media (max-width: $md4+px) {
 		padding: 0;
 		position: relative;
 		height: 170px;
 	}
+
 	// .card-order__image
 
 	&__image {
@@ -703,6 +787,7 @@
 		display: flex;
 		justify-content: center;
 		margin: 0px 20px 0px 0px;
+
 		img {
 			max-width: 100%;
 			height: 100%;
@@ -724,6 +809,7 @@
 		font-size: 18px;
 		line-height: 24px;
 		margin: 0px 0px 12px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -740,6 +826,7 @@
 		font-size: 14px;
 		line-height: 24px;
 		margin: 0px 0px 12px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 12px;
 			line-height: 12px;
@@ -754,8 +841,7 @@
 
 	// .card-order__article-number
 
-	&__article-number {
-	}
+	&__article-number {}
 
 	// .card-order__prices
 
@@ -772,6 +858,7 @@
 		font-size: 24px;
 		line-height: 30px;
 		margin: 0px 10px 0px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
@@ -786,6 +873,7 @@
 		line-height: 24px;
 		text-decoration: line-through;
 		color: #828282;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 20px;
@@ -800,6 +888,7 @@
 		line-height: 30px;
 		display: flex;
 		align-items: center;
+
 		@media (max-width: $md4+px) {
 			font-size: 18px;
 			line-height: 24px;
@@ -816,6 +905,7 @@
 		line-height: 24px;
 		font-weight: 400;
 		margin: 0px 10px 0px 0px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -824,8 +914,7 @@
 
 	// .card-order__sum
 
-	&__sum {
-	}
+	&__sum {}
 
 	// .card-order__sum-blu
 
