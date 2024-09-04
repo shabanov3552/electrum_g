@@ -417,6 +417,7 @@
 	&__image {
 		min-height: 580px;
 		cursor: pointer;
+		display: block;
 
 		@media (max-width: $md3+px) {
 			min-height: 480px;

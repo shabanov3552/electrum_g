@@ -1,15 +1,19 @@
 //====================================================================================================
 .contacts {
+
 	// .contacts__top
 	&__title {
 		margin: 0px 0px 40px 0px;
+
 		@media (max-width: $md3+px) {
 			margin: 0px 0px 27px 0px;
 		}
+
 		@media (max-width: $md4+px) {
 			margin: 0px 0px 20px 0px;
 		}
 	}
+
 	&__top {
 		background-color: #141414;
 		padding: 60px 95px;
@@ -18,7 +22,8 @@
 		display: flex;
 		justify-content: flex-end;
 		overflow: hidden;
-		margin: 0px 0px 120px 0px;
+		margin: 0px 0px 60px 0px;
+
 		@media (max-width: 1180px) {
 			padding: 47px 20px;
 			margin: 0px 0px 40px 0px;
@@ -30,9 +35,11 @@
 	&__img {
 		width: 741px;
 		left: 30%;
+
 		@media (max-width: 1180px) {
 			width: 340px;
 		}
+
 		@media (max-width: $md5+px) {
 			left: 50%;
 		}
@@ -56,13 +63,16 @@
 		color: #fff;
 		display: flex;
 		align-items: center;
+
 		&:not(:last-child) {
-			margin: 0px 0px 40px 0px;
+			margin: 0px 0px 16px 0px;
 		}
+
 		@media (max-width: 1180px) {
 			font-weight: 400;
 			font-size: 14px;
 			line-height: 16px;
+
 			&:not(:last-child) {
 				margin: 0px 0px 20px 0px;
 			}
@@ -80,6 +90,7 @@
 	&__center {
 		display: flex;
 		margin: 0px 0px 116px 0px;
+
 		@media (max-width: 1680px) {
 			flex-direction: column;
 		}
@@ -89,6 +100,7 @@
 
 	&__requisites {
 		flex: 0 1 50%;
+
 		@media (max-width: 1680px) {
 			flex: 1 1 100%;
 			margin: 0px 0px 40px 0px;
@@ -99,6 +111,7 @@
 
 	&__map-wrapper {
 		flex: 0 1 50%;
+
 		@media (max-width: 1680px) {
 			flex: 1 1 100%;
 		}
@@ -108,25 +121,31 @@
 
 	&__map {
 		height: 100%;
+
 		@media (max-width: 1680px) {
 			height: 400px;
 		}
+
 		@media (max-width: $md3+px) {
 			height: 232px;
 		}
 	}
+
 	// .contacts__bottom
 
 	&__bottom {
 		margin: 0px 0px 120px 0px;
+
 		@media (max-width: $md3+px) {
 			margin: 0px 0px 60px 0px;
 		}
 	}
+
 	// .contacts__bottom-title
 
 	&__bottom-title {
 		margin: 0px 0px 60px 0px;
+
 		@media (max-width: $md3+px) {
 			margin: 0px 0px 20px 0px;
 		}
@@ -143,6 +162,7 @@
 
 	&__bottom-item {
 		flex: 0 1 20%;
+
 		@media (max-width: 355px) {
 			flex: 1 1 100%;
 		}
@@ -158,10 +178,12 @@
 		font-size: 18px;
 		line-height: 24px;
 		padding: 16px 20px;
+
 		@media (max-width: $md3+px) {
 			flex-direction: column;
 			padding: 10px;
 		}
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -173,9 +195,11 @@
 	&__name {
 		flex: 0 0 320px;
 		font-weight: 400;
+
 		@media (max-width: 1680px) {
 			flex: 1 1 100%;
 		}
+
 		@media (max-width: $md3+px) {
 			margin: 0px 0px 5px 0px;
 		}
@@ -186,6 +210,7 @@
 	&__content {
 		flex: 0 0 360px;
 		font-weight: 600;
+
 		@media (max-width: 1680px) {
 			flex: 1 1 100%;
 		}
@@ -197,6 +222,7 @@
 		display: flex;
 		align-items: center;
 		padding: 0px 0px 0px 20px;
+
 		@media (max-width: $md3+px) {
 			padding: 0px 0px 0px 10px;
 		}
@@ -209,6 +235,7 @@
 		line-height: 24px;
 		color: #004ea6;
 		margin: 0px 0px 0px 10px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -221,23 +248,28 @@
 	flex-direction: column;
 	padding: 24px 45px;
 	border: 1px solid #e0e0e0;
+
 	:not(:last-child) {
 		margin: 0px 0px 10px 0px;
 	}
+
 	@media (max-width: $md3+px) {
 		padding: 19px;
 	}
+
 	// .specialist__photo
 
 	&__photo {
 		width: 216px;
 		height: 216px;
 		background: #f2f2f2;
+
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
 		}
+
 		@media (max-width: $md4+px) {
 			width: 130px;
 			height: 130px;
@@ -250,6 +282,7 @@
 		font-weight: 600;
 		font-size: 18px;
 		line-height: 24px;
+
 		@media (max-width: $md4+px) {
 			font-size: 14px;
 			line-height: 16px;
@@ -262,6 +295,7 @@
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 20px;
+
 		@media (max-width: $md4+px) {
 			font-size: 12px;
 			line-height: 12px;
@@ -275,6 +309,7 @@
 		font-size: 14px;
 		line-height: 20px;
 		color: #004ea6;
+
 		@media (max-width: $md4+px) {
 			font-size: 12px;
 			line-height: 12px;
@@ -288,9 +323,75 @@
 		font-size: 14px;
 		line-height: 20px;
 		color: #004ea6;
+
 		@media (max-width: $md4+px) {
 			font-size: 12px;
 			line-height: 12px;
 		}
+	}
+}
+
+
+.contacts-features {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 17px;
+	margin-bottom: 40px;
+
+	@media (max-width:1279.98px) {
+		grid-template-columns: 1fr;
+	}
+
+	// .contacts-features__item
+
+	&__item {
+		background: #045ec3;
+		color: #fff;
+		padding: 20px 24px;
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		gap: 16px;
+		align-items: center;
+
+		@media (max-width:$md1+px) {
+			grid-template-columns: 60px 1fr;
+		}
+
+		@media (max-width:$md4+px) {
+			padding: 14px 13px;
+		}
+
+		img {
+			width: 80px;
+			height: 80px;
+
+			@media (max-width:$md1+px) {
+				width: 60px;
+				height: 60px;
+			}
+		}
+	}
+
+	// .contacts-features__text
+
+	&__text {
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 133%;
+		color: #fff;
+
+		@media (max-width:$md1+px) {
+			font-size: 18px;
+		}
+	}
+}
+
+.contacts-features-map {
+	margin: 0 auto;
+	margin-bottom: 60px;
+	max-width: 1579px;
+
+	img {
+		max-width: 100%;
 	}
 }

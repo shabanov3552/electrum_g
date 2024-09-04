@@ -4,5 +4,4 @@
 @@include('files/scroll.js', {})
 @@include('files/dynamic_adapt.js', {})
 @@include('files/sliders.js', {})
-@@include('files/map.js', {})
 @@include('files/script.js', {})

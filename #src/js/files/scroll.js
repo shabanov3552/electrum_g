@@ -9,11 +9,25 @@ window.addEventListener('scroll', scroll_scroll);
 function scroll_scroll() {
 	let src_value = currentScroll = pageYOffset;
 	let header = document.querySelector('header.header');
+	let mainScreen = document.querySelector('.main-screen');
 	if (header !== null) {
 		if (src_value > 100) {
 			header.classList.add('_scroll');
 		} else {
 			header.classList.remove('_scroll');
+		}
+	}
+
+	if (mainScreen && window.innerWidth > 767.98) {
+		let menu_right = document.querySelectorAll('.menu-right__btn');
+		if (src_value < window.innerHeight - 150) {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.add('menu-right__btn_white');
+			}
+		} else {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.remove('menu-right__btn_white');
+			}
 		}
 	}
 

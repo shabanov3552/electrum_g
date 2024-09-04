@@ -12,6 +12,7 @@ if (isMobile.any()) {
 }
 
 
+
 let unlock = true;
 
 //=================
@@ -27,7 +28,6 @@ if (location.hash) {
 //=================
 
 //Menu
-
 const menuMobileMQ = window.matchMedia("(min-width: 768px)");
 
 function someFunctionMQ(e) {
@@ -47,7 +47,7 @@ function someFunctionMQ(e) {
 			if (unlock) {
 				menuBody.classList.add("_active");
 				headerLogo.classList.add("_active");
-				popup_open("catalog")
+				// openCatalog()
 				body_lock(delay);
 			}
 		}
@@ -64,7 +64,6 @@ function someFunctionMQ(e) {
 menuMobileMQ.addListener(someFunctionMQ);
 // Initial check
 someFunctionMQ(menuMobileMQ);
-
 //=================
 //BodyLock
 function body_lock(delay) {
@@ -139,7 +138,7 @@ for (let index = 0; index < tabs.length; index++) {
 Для заголовков слойлеров пишем атрибут data-spoller
 Если нужно включать\выключать работу спойлеров на разных размерах экранов
 пишем параметры ширины и типа брейкпоинта.
-Например: 
+Например:
 data-spollers="992,max" - спойлеры будут работать только на экранах меньше или равно 992px
 data-spollers="768,min" - спойлеры будут работать только на экранах больше или равно 768px
 
@@ -226,12 +225,14 @@ if (spollersArray.length > 0) {
 			spollerTitles.forEach(spollerTitle => {
 				if (hideSpollerBody) {
 					spollerTitle.removeAttribute('tabindex');
-					if (!spollerTitle.classList.contains('_active')) {
+					if (!spollerTitle.classList.contains('_active') && spollerTitle.nextElementSibling) {
 						spollerTitle.nextElementSibling.hidden = true;
 					}
 				} else {
 					spollerTitle.setAttribute('tabindex', '-1');
-					spollerTitle.nextElementSibling.hidden = false;
+					if (spollerTitle.nextElementSibling) {
+						spollerTitle.nextElementSibling.hidden = false;
+					}
 				}
 			});
 		}
@@ -292,7 +293,7 @@ function popup_open(item, video = '') {
 		popup_close('', false);
 	}
 	let curent_popup = document.querySelector('.popup_' + item);
-	let input_focus = curent_popup.querySelector('.input');
+	let input_focus = curent_popup?.querySelector('.input');
 	if (curent_popup && unlock) {
 		if (video != '' && video != null) {
 			let popup_video = document.querySelector('.popup_video');
@@ -447,6 +448,7 @@ if (gallery) {
 function gallery_init() {
 	for (let index = 0; index < gallery.length; index++) {
 		const el = gallery[index];
+		if (el.matches('._swiper')) continue
 		lightGallery(el, {
 			counter: false,
 			selector: 'a',

@@ -17,7 +17,7 @@
 		padding: 0px 0px 0px 440px;
 		margin: 0px 0px 40px 0px;
 
-		@media (max-width: 1600px) {
+		@media (max-width: 1800px) {
 			padding: 0;
 		}
 
@@ -322,6 +322,10 @@
 	justify-content: space-between;
 	align-items: center;
 
+	@media (max-width:$md2+px) {
+		flex-wrap: wrap;
+	}
+
 	&__layout {
 		display: flex;
 		align-items: center;
@@ -349,7 +353,7 @@
 		display: flex;
 		align-items: center;
 
-		@media (max-width: $md3+px) {
+		@media (max-width: 1270px) {
 			display: block;
 			width: 100%;
 		}
@@ -361,7 +365,7 @@
 		font-size: 18px;
 		line-height: 24px;
 
-		@media (max-width: $md3+px) {
+		@media (max-width: 1270px) {
 			margin: 0px 0px 10px 0px;
 		}
 	}
@@ -371,7 +375,7 @@
 			min-width: 270px;
 
 			.nice-select {
-				@media (max-width: $md3+px) {
+				@media (max-width: 1270px) {
 					margin: 0px 0px 0px 0px;
 				}
 			}
@@ -379,13 +383,18 @@
 
 		&:not(:last-child) {
 			margin: 0px 40px 0px 0px;
+
+			@media (max-width: 1270px) {
+				margin-bottom: 16px;
+				display: flex;
+			}
 		}
 
-		@media (max-width: $md3+px) {
+		@media (max-width: 1270px) {
 			width: 100%;
 
 			&:not(:last-child) {
-				margin: 0px 0px 10px 0px;
+				margin: 0px 0px 16px 0px;
 			}
 		}
 	}

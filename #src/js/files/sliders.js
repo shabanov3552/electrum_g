@@ -26,13 +26,15 @@ if (sliders) {
 			}
 		}
 		if (slider.classList.contains('_gallery')) {
-			//slider.data('lightGallery').destroy(true);
+			lightGallery(slider, {
+				counter: false,
+				selector: 'a',
+				download: false
+			});
 		}
 	}
-	sliders_bild_callback();
 }
 
-function sliders_bild_callback(params) { }
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
@@ -58,7 +60,6 @@ if (sliderScrollItems.length > 0) {
 	}
 }
 
-function sliders_bild_callback(params) { }
 
 if (document.querySelector('.advantages__slider')) {
 	new Swiper('.advantages__slider', {
@@ -105,39 +106,6 @@ if (document.querySelector('.advantages__slider')) {
 	});
 }
 
-if (document.querySelector('.popular-slider__row')) {
-	new Swiper('.popular-slider__row', {
-		slidesPerGroup: 2,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next',
-			prevEl: '.popular-slider__prev'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
-			},
-		},
-	});
-}
-
 if (document.querySelector('.partners__slider')) {
 	new Swiper('.partners__slider', {
 		autoplay: {
@@ -168,81 +136,21 @@ if (document.querySelector('.partners__slider')) {
 
 if (document.querySelector('.slider-product__big')) {
 	new Swiper('.slider-product__big', {
+		navigation: {
+			nextEl: '.slider-product__next',
+			prevEl: '.slider-product__prev'
+		},
+		loop: true,
 		thumbs: {
 			swiper: {
 				el: '.slider-product__nav',
 				slidesPerView: 3.3,
+				loop: true,
 				breakpoints: {
 					767.98: {
 						direction: "vertical",
 					},
 				},
-			},
-		},
-	});
-}
-
-if (document.querySelector('.popular-slider__row_1')) {
-	new Swiper('.popular-slider__row_1', {
-		slidesPerGroup: 1,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction1',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next1',
-			prevEl: '.popular-slider__prev1'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
-			},
-		},
-	});
-}
-
-if (document.querySelector('.popular-slider__row_2')) {
-	new Swiper('.popular-slider__row_2', {
-		slidesPerGroup: 2,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction2',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next2',
-			prevEl: '.popular-slider__prev2'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
 			},
 		},
 	});

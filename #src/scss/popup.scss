@@ -771,10 +771,36 @@
 		}
 	}
 
+	&__main {
+		overflow: auto;
+		height: 82vh;
+		margin: 0px 60px 0px 0px;
+
+		@media (max-width: 1100px) {
+			margin: 0px 0px 20px 0px;
+			height: auto;
+		}
+	}
+
+	// &__list-title {
+	// 	background: #e5f1ff;
+	// 	border-radius: 5px;
+	// 	font-weight: 500;
+	// 	font-size: 18px;
+	// 	line-height: 133%;
+	// 	padding: 8px 20px;
+	// 	margin-bottom: 32px;
+	// 	color: #004fa6;
+	// }
+
+	// &__list-chunk {
+	// 	margin-bottom: 60px;
+	// }
+
 	&__list {
 		flex: 1 1 auto;
-		margin: 0px 60px 0px 0px;
 		overflow: auto;
+		margin: 0px 60px 0px 0px;
 		height: 82vh;
 
 		@media (max-width: 1100px) {

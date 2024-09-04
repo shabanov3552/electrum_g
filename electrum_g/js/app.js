@@ -15,6 +15,7 @@ if (isMobile.any()) {
 }
 
 
+
 let unlock = true;
 
 //=================
@@ -30,7 +31,6 @@ if (location.hash) {
 //=================
 
 //Menu
-
 const menuMobileMQ = window.matchMedia("(min-width: 768px)");
 
 function someFunctionMQ(e) {
@@ -50,7 +50,7 @@ function someFunctionMQ(e) {
 			if (unlock) {
 				menuBody.classList.add("_active");
 				headerLogo.classList.add("_active");
-				popup_open("catalog")
+				// openCatalog()
 				body_lock(delay);
 			}
 		}
@@ -67,7 +67,6 @@ function someFunctionMQ(e) {
 menuMobileMQ.addListener(someFunctionMQ);
 // Initial check
 someFunctionMQ(menuMobileMQ);
-
 //=================
 //BodyLock
 function body_lock(delay) {
@@ -142,7 +141,7 @@ for (let index = 0; index < tabs.length; index++) {
 Для заголовков слойлеров пишем атрибут data-spoller
 Если нужно включать\выключать работу спойлеров на разных размерах экранов
 пишем параметры ширины и типа брейкпоинта.
-Например: 
+Например:
 data-spollers="992,max" - спойлеры будут работать только на экранах меньше или равно 992px
 data-spollers="768,min" - спойлеры будут работать только на экранах больше или равно 768px
 
@@ -229,12 +228,14 @@ if (spollersArray.length > 0) {
 			spollerTitles.forEach(spollerTitle => {
 				if (hideSpollerBody) {
 					spollerTitle.removeAttribute('tabindex');
-					if (!spollerTitle.classList.contains('_active')) {
+					if (!spollerTitle.classList.contains('_active') && spollerTitle.nextElementSibling) {
 						spollerTitle.nextElementSibling.hidden = true;
 					}
 				} else {
 					spollerTitle.setAttribute('tabindex', '-1');
-					spollerTitle.nextElementSibling.hidden = false;
+					if (spollerTitle.nextElementSibling) {
+						spollerTitle.nextElementSibling.hidden = false;
+					}
 				}
 			});
 		}
@@ -295,7 +296,7 @@ function popup_open(item, video = '') {
 		popup_close('', false);
 	}
 	let curent_popup = document.querySelector('.popup_' + item);
-	let input_focus = curent_popup.querySelector('.input');
+	let input_focus = curent_popup?.querySelector('.input');
 	if (curent_popup && unlock) {
 		if (video != '' && video != null) {
 			let popup_video = document.querySelector('.popup_video');
@@ -450,6 +451,7 @@ if (gallery) {
 function gallery_init() {
 	for (let index = 0; index < gallery.length; index++) {
 		const el = gallery[index];
+		if (el.matches('._swiper')) continue
 		lightGallery(el, {
 			counter: false,
 			selector: 'a',
@@ -770,11 +772,25 @@ window.addEventListener('scroll', scroll_scroll);
 function scroll_scroll() {
 	let src_value = currentScroll = pageYOffset;
 	let header = document.querySelector('header.header');
+	let mainScreen = document.querySelector('.main-screen');
 	if (header !== null) {
 		if (src_value > 100) {
 			header.classList.add('_scroll');
 		} else {
 			header.classList.remove('_scroll');
+		}
+	}
+
+	if (mainScreen && window.innerWidth > 767.98) {
+		let menu_right = document.querySelectorAll('.menu-right__btn');
+		if (src_value < window.innerHeight - 150) {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.add('menu-right__btn_white');
+			}
+		} else {
+			for (let index = 0; index < menu_right.length; index++) {
+				menu_right[index].classList.remove('menu-right__btn_white');
+			}
 		}
 	}
 
@@ -963,7 +979,7 @@ DynamicAdapt.prototype.indexInParent = function (parent, element) {
 	return Array.prototype.indexOf.call(array, element);
 };
 
-// Функция сортировки массива по breakpoint и place 
+// Функция сортировки массива по breakpoint и place
 // по возрастанию для this.type = min
 // по убыванию для this.type = max
 DynamicAdapt.prototype.arraySort = function (arr) {
@@ -1041,13 +1057,15 @@ if (sliders) {
 			}
 		}
 		if (slider.classList.contains('_gallery')) {
-			//slider.data('lightGallery').destroy(true);
+			lightGallery(slider, {
+				counter: false,
+				selector: 'a',
+				download: false
+			});
 		}
 	}
-	sliders_bild_callback();
 }
 
-function sliders_bild_callback(params) { }
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
@@ -1073,7 +1091,6 @@ if (sliderScrollItems.length > 0) {
 	}
 }
 
-function sliders_bild_callback(params) { }
 
 if (document.querySelector('.advantages__slider')) {
 	new Swiper('.advantages__slider', {
@@ -1120,39 +1137,6 @@ if (document.querySelector('.advantages__slider')) {
 	});
 }
 
-if (document.querySelector('.popular-slider__row')) {
-	new Swiper('.popular-slider__row', {
-		slidesPerGroup: 2,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next',
-			prevEl: '.popular-slider__prev'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
-			},
-		},
-	});
-}
-
 if (document.querySelector('.partners__slider')) {
 	new Swiper('.partners__slider', {
 		autoplay: {
@@ -1183,81 +1167,21 @@ if (document.querySelector('.partners__slider')) {
 
 if (document.querySelector('.slider-product__big')) {
 	new Swiper('.slider-product__big', {
+		navigation: {
+			nextEl: '.slider-product__next',
+			prevEl: '.slider-product__prev'
+		},
+		loop: true,
 		thumbs: {
 			swiper: {
 				el: '.slider-product__nav',
 				slidesPerView: 3.3,
+				loop: true,
 				breakpoints: {
 					767.98: {
 						direction: "vertical",
 					},
 				},
-			},
-		},
-	});
-}
-
-if (document.querySelector('.popular-slider__row_1')) {
-	new Swiper('.popular-slider__row_1', {
-		slidesPerGroup: 1,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction1',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next1',
-			prevEl: '.popular-slider__prev1'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
-			},
-		},
-	});
-}
-
-if (document.querySelector('.popular-slider__row_2')) {
-	new Swiper('.popular-slider__row_2', {
-		slidesPerGroup: 2,
-		slidesPerView: 4,
-		spaceBetween: 0,
-		speed: 800,
-		simulateTouch: true,
-		loop: true,
-		pagination: {
-			el: '.popular-slider__fraction2',
-			clickable: true,
-			type: 'fraction'
-		},
-		// Arrows
-		navigation: {
-			nextEl: '.popular-slider__next2',
-			prevEl: '.popular-slider__prev2'
-		},
-
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1150: {
-				slidesPerView: 3,
-			},
-			1700: {
-				slidesPerView: 4,
 			},
 		},
 	});
@@ -1315,325 +1239,10 @@ if (document.querySelector('.certificates__slider')) {
 		},
 	});
 }
-
-function mapAdd() {
-	let tag = document.createElement('script');
-	tag.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDf4p3LffKDVRZJBYNqvV2DGVNVQwA1Mm4&callback=mapInit";
-	let firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-}
-function mapInit(n = 1) {
-	google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
-		var map = this;
-		var ov = new google.maps.OverlayView();
-		ov.onAdd = function () {
-			var proj = this.getProjection();
-			var aPoint = proj.fromLatLngToContainerPixel(latlng);
-			aPoint.x = aPoint.x + offsetX;
-			aPoint.y = aPoint.y + offsetY;
-			map.panTo(proj.fromContainerPixelToLatLng(aPoint));
-			//map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
-		}
-		ov.draw = function () { };
-		ov.setMap(this);
-	};
-	var markers = new Array();
-	var infowindow = new google.maps.InfoWindow({
-		//pixelOffset: new google.maps.Size(-230,250)
-	});
-	var locations = [
-		[new google.maps.LatLng(56.032800, 92.804867)],
-	]
-	var options = {
-		zoom: 18,
-		panControl: false,
-		mapTypeControl: false,
-		fullscreenControl: false,
-		disableDefaultUI: true,
-		zoomControl: true,
-		scrollwheel: false,
-		center: new google.maps.LatLng(56.032800, 92.804867),
-		styles: [
-			{
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#363636"
-					}
-				]
-			},
-			{
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#ffffff"
-					}
-				]
-			},
-			{
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"color": "#212121"
-					}
-				]
-			},
-			{
-				"featureType": "administrative.country",
-				"elementType": "geometry.stroke",
-				"stylers": [
-					{
-						"color": "#cecece"
-					}
-				]
-			},
-			{
-				"featureType": "administrative.land_parcel",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#64779e"
-					}
-				]
-			},
-			{
-				"featureType": "administrative.province",
-				"elementType": "geometry.stroke",
-				"stylers": [
-					{
-						"color": "#4b6878"
-					}
-				]
-			},
-			{
-				"featureType": "landscape.man_made",
-				"elementType": "geometry.stroke",
-				"stylers": [
-					{
-						"color": "#737373"
-					}
-				]
-			},
-			{
-				"featureType": "landscape.natural",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#4d4d4d"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#283d6a"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#f2f2f2"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "geometry.fill",
-				"stylers": [
-					{
-						"color": "#4d4d4d"
-					}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#3C7680"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#595959"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#98a5be"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"color": "#1d2c4d"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#595959"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [
-					{
-						"color": "#255763"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#b0d5ce"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"color": "#023e58"
-					}
-				]
-			},
-			{
-				"featureType": "transit",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#98a5be"
-					}
-				]
-			},
-			{
-				"featureType": "transit",
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"color": "#1d2c4d"
-					}
-				]
-			},
-			{
-				"featureType": "transit.line",
-				"elementType": "geometry.fill",
-				"stylers": [
-					{
-						"color": "#283d6a"
-					}
-				]
-			},
-			{
-				"featureType": "transit.station",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#666666"
-					}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#454545"
-					}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#4e6d70"
-					}
-				]
-			}
-		],
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-	};
-	var map = new google.maps.Map(document.getElementById('map'), options);
-	var icon = {
-		url: '/local/templates/main/img/icons/map.svg',
-		scaledSize: new google.maps.Size(45, 60),
-		//anchor: new google.maps.Point(9, 10)
-	}
-	for (var i = 0; i < locations.length; i++) {
-		var marker = new google.maps.Marker({
-			icon: icon,
-			position: locations[i][0],
-			map: map,
-		});
-		google.maps.event.addListener(marker, 'click', (function (marker, i) {
-			return function () {
-				for (var m = 0; m < markers.length; m++) {
-					markers[m].setIcon(icon);
-				}
-				var cnt = i + 1;
-				//infowindow.setContent(document.querySelector('.events-map__item_' + cnt).innerHTML);
-				//infowindow.open(map, marker);
-				marker.setIcon(icon);
-				map.setCenterWithOffset(marker.getPosition(), 0, 0);
-				setTimeout(function () {
-
-				}, 10);
-			}
-		})(marker, i));
-		markers.push(marker);
-	}
-	if (n) {
-		var nc = n - 1;
-		setTimeout(function () {
-			google.maps.event.trigger(markers[nc], 'click');
-		}, 500);
-	}
-}
-if (document.querySelector('#map')) {
-	mapAdd();
-}
 window.addEventListener('resize', move);
 let subLink = document.querySelectorAll('.menu__sub-link');
 
 function move() {
-	let catalog__content = document.querySelector(".catalog__content");
-	let row = document.querySelector('.layout-row');
-	let col = document.querySelector('.layout-col ');
 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 	if (viewport_width <= 1099.93) {
 		for (let i = 0; i < subLink.length; i++) {
@@ -1646,19 +1255,33 @@ function move() {
 			subLink[i].classList.remove('menu__link');
 		}
 	}
-	if (viewport_width <= 1180) {
-		if (catalog__content) {
-			if (catalog__content.classList.contains('catalog__content_row')) {
+
+}
+
+move();
+//========================================================================================================================================================
+const catalogMobileMQ = window.matchMedia("(max-width: 1180px)");
+
+function catalogLayoutChange(e) {
+	let catalog__content = document.querySelector(".catalog__content");
+	let row = document.querySelector('.layout-row');
+	let col = document.querySelector('.layout-col ');
+	if (e.matches) {
+		setTimeout(() => {
+			if (catalog__content) {
 				catalog__content.classList.remove('catalog__content_row');
 				catalog__content.classList.add('catalog__content_col');
 				row.classList.remove('_active');
 				col.classList.add('_active');
 			}
-		}
+		}, 100);
 	}
-}
+};
+// Register event listener
+catalogMobileMQ.addListener(catalogLayoutChange);
+// Initial check
+catalogLayoutChange(catalogMobileMQ);
 
-move();
 
 //========================================================================================================================================================
 
@@ -1681,19 +1304,17 @@ document.addEventListener("click", function (e) {
 //========================================================================================================================================================
 
 
+//========================================================================================================================================================
+//*стиль хедера для главной
 
-if (window.matchMedia('(max-width: 1280px)').matches) {
-	let tabsBlock = document.querySelectorAll('.catalog-modal__subcategory');
-	let tabsItem = document.querySelectorAll('.catalog-modal__category');
-
-	tabsBlock.forEach(element => {
-		element.classList.remove('catalog-modal__subcategory_active');
-	});
-	tabsItem.forEach(element => {
-		element.classList.remove('catalog-modal__category_active');
-	});
-
-};
+function styleForIndex() {
+	let header = document.querySelector('.header');
+	let mainScreen = document.querySelector('.main-screen');
+	if (mainScreen) {
+		header.classList.add('main-page');
+	}
+}
+styleForIndex();
 
 //========================================================================================================================================================
 //*табы для модалки каталога
@@ -1747,6 +1368,9 @@ let sort__layout_btns = document.querySelectorAll(".sort__layout-btn");
 
 for (let index = 0; index < sort__layout_btns.length; index++) {
 	let catalog__content = document.querySelector(".catalog__content");
+	if (catalog__content === null) {
+		continue;
+	}
 	let row = document.querySelector('.layout-row');
 	let col = document.querySelector('.layout-col ');
 	let sort__layout_btn = sort__layout_btns[index];
@@ -1779,6 +1403,7 @@ for (let index = 0; index < sort__layout_btns.length; index++) {
 		sort__layout_btn.classList.add('_active');
 	});
 };
+
 
 
 //========================================================================================================================================================
@@ -1816,41 +1441,6 @@ if (document.querySelectorAll('.order__status').length > 0) {
 };
 //========================================================================================================================================================
 //*progressBar для preloader
-// function preloader() {
-// 	document.querySelector('.preloader__wht').style.display = 'none';
-// 	let images = document.images,
-// 		images_total_count = images.length,
-// 		images_loaded_count = 0,
-// 		progress_bar = document.querySelector('.preloader__progress-bar'),
-// 		preloader = document.querySelector('.preloader');
-// 	preloader.style.display = 'flex'
-// 	preloader.querySelector('.preloader__logo').style.display = 'flex';
-// 	preloader.querySelector('.preloader__progress-bar').style.display = 'block';
-// 	for (let i = 0; i < images_total_count; i++) {
-// 		image_clone = new Image();
-// 		image_clone.onload = image_loaded;
-// 		image_clone.onerror = image_loaded;
-// 		image_clone.src = images[i].src;
-
-// 	}
-// 	function image_loaded() {
-// 		images_loaded_count++;
-// 		progress_bar.style.width = (((100 / images_total_count) * images_loaded_count) << 0) + '%';
-
-// 		if (images_loaded_count >= images_total_count) {
-// 			setTimeout(() => {
-// 				if (!preloader.classList.contains('done')) {
-// 					preloader.classList.add('done');
-// 					sessionStorage.setItem('loader', 'done');
-// 				}
-// 				if (document.querySelector('.wrapper')) {
-// 					document.querySelector('.wrapper').classList.add('_loaded');
-// 				}
-// 			}, 500);
-// 		}
-// 	};
-// };
-
 function addLoadedClass() {
 	if (!document.documentElement.classList.contains('loading')) {
 		window.addEventListener("load", function () {
@@ -1863,14 +1453,8 @@ function addLoadedClass() {
 
 addLoadedClass();
 
-// if (!sessionStorage.getItem('loader')) {
-// 	preloader()
-// } else {
-// 	document.querySelector('.wrapper').classList.add('_loaded');
-// 	document.querySelector('.preloader').classList.add('done');
-// }
 //========================================================================================================================================================
-//*zoom on scroll
+// *zoom on scroll
 
 
 
@@ -1903,7 +1487,7 @@ $('._img-parallax').each(function () {
 		var parentH = imgParent.innerHeight();
 
 
-		// The next pixel to show on screen      
+		// The next pixel to show on screen
 		var winBottom = winY + winH;
 
 		// If block is shown on screen
@@ -1927,6 +1511,7 @@ $('._img-parallax').each(function () {
 			parallaxImg();
 		}
 	});
+	parallaxImg();
 });
 //========================================================================================================================================================
 //*очистка поля поиска
@@ -1972,7 +1557,78 @@ window.addEventListener('load', function () {
 })
 
 
+const shopListAction = (method, params) => {
+	return async () => {
+		let body = new FormData()
+		body.append('sessid', window.BX.bitrix_sessid())
+		if (undefined !== params) {
+			(Object.entries(params)).map(([k, v]) => body.append(k, v))
+		}
 
+		let getParams = `?action=mkmatrix:main.shopList.${method}`
+
+		let res = await fetch(
+			"/bitrix/services/main/ajax.php" + getParams,
+			{
+				method: "POST",
+				body
+			}
+		).then(r => r.json())
+
+		if (res.status === "error") {
+			console.error(res)
+		}
+
+		return res
+	}
+}
+
+const fixShopListButtons = () => {
+	if (undefined === window.shopList) {
+		return
+	}
+
+	var itemNodes = [...document.querySelectorAll('.js-addToShopList')]
+
+	if (!itemNodes.length) {
+		return
+	}
+
+	var findNodes = (item) => itemNodes.filter(n => n.dataset.id == item.UF_ITEM)
+
+	window.shopList.map(item => {
+		var nodes = findNodes(item)
+		if (!nodes.length) {
+			return
+		}
+
+		nodes.map(node => node.innerText = "Добавлено " + item.UF_AMOUNT)
+	})
+}
+
+const loadShopList = async () => {
+	var action = shopListAction('getJsList')
+
+	var badge = document.querySelector('.btn-shop-list .icon-count')
+
+	var res = await action();
+
+	if (res.status === "error") {
+		return
+	}
+
+	var count = res.data.length || 0
+
+	if (count > 0) {
+		badge.style.display = ''
+		badge.innerText = count
+	} else {
+		badge.style.display = 'none'
+	}
+
+	window.shopList = res.data
+	fixShopListButtons()
+}
 
 // global click events
 const globalClickHandlers = {
@@ -1980,7 +1636,145 @@ const globalClickHandlers = {
 		if (node.dataset.closeAllModals !== undefined) {
 			[...document.querySelectorAll(".modal.open")].map(n => closeModal(n))
 		}
-		openModal(document.querySelector(node.dataset.openModal))
+		// openModal(document.querySelector(node.dataset.openModal))
+		openModal(node.dataset.openModal)
+	},
+
+	// список покупок
+	'js-addToShopList': async (node) => {
+		if (node.innerText.startsWith('Добавлено')) {
+			window.location = "/catalog/shop-list/"
+			return;
+		}
+
+		var action = shopListAction('add', { itemId: parseInt(node.dataset.id) })
+
+		res = await action();
+
+		if (res.status !== "error") {
+			node.innerText = "Добавлено"
+		}
+		loadShopList()
+	},
+	'js-shopListClear': async (node) => {
+		var action = shopListAction('clearUser')
+
+		res = await action();
+
+		if (res.status !== "error") {
+			window.location.reload()
+		}
+	},
+	'js-shopListDeleteItem': async (node) => {
+		var action = shopListAction('removeFromList', { itemId: parseInt(node.dataset.id) })
+
+		res = await action();
+
+		if (res.status !== "error") {
+			window.location.reload()
+		}
+	},
+	'js-shopListAmountDown': async (node) => {
+		var input = node.closest('.js-amountContainer').querySelector('.js-shopListAmount')
+		var totalNode = node.closest('.js-amountContainer').querySelector('.js-total')
+		var action = shopListAction(
+			'changeQuantity',
+			{
+				itemId: parseInt(input.dataset.id),
+				amount: parseFloat(input.value)
+			}
+		)
+
+		res = await action();
+
+		if (res.status !== "error") {
+			if (res.data > 0) {
+				input.value = res.data
+				totalNode.innerText = parseFloat(res.data) * input.dataset.price
+			} else {
+				window.location.reload()
+			}
+		}
+	},
+	'js-shopListAmountUp': async (node) => {
+		var input = node.closest('.js-amountContainer').querySelector('.js-shopListAmount')
+		var totalNode = node.closest('.js-amountContainer').querySelector('.js-total')
+		var action = shopListAction(
+			'changeQuantity',
+			{
+				itemId: parseInt(input.dataset.id),
+				amount: parseFloat(input.value)
+			}
+		)
+
+		res = await action();
+
+		if (res.status !== "error") {
+			if (res.data > 0) {
+				input.value = res.data
+				totalNode.innerText = parseFloat(res.data) * input.dataset.price
+			} else {
+				window.location.reload()
+			}
+		}
+	},
+	'js-addItem2Basket': async (node) => {
+		var itemNode = node.closest('.js-item')
+		if (!!itemNode.inBasket) {
+			popup_open("basket");
+			$(".scroll").getNiceScroll().show().resize();
+			return;
+		}
+		var itemId = itemNode.dataset.id
+		var amount = parseFloat(itemNode.querySelector('.js-shopListAmount').value)
+
+		var data = {
+			'ajax_basket': 'Y',
+			'quantity': amount,
+			'prop[0]': 0,
+		}
+
+		$.post({
+			'url': window.location.pathname + `?action=ADD2BASKET&id=${itemId}`,
+			data,
+			'success': () => BX.onCustomEvent('OnBasketChange')
+		})
+	},
+	'js-addItem2Compare': async (node) => {
+		var itemNode = node.closest('.js-item')
+		var itemId = parseInt(itemNode.dataset.id)
+
+		var data = {}
+
+		var checkbox = node.querySelector('[data-entity="compare-checkbox"]'),
+			checked = true;
+
+		if (checkbox) {
+			checked = !checkbox.checked;
+		}
+
+		var action = checked ? "ADD_TO_COMPARE_LIST" : "DELETE_FROM_COMPARE_LIST"
+
+		await $.post({
+			'url': `/catalog/compare/?action=${action}&id=${itemId}&ajax_action=Y`,
+			data,
+		})
+
+
+
+		BX.onCustomEvent('OnCompareChange')
+		var compare = JSON.parse(localStorage.getItem('compareItems'));
+		if (checked) {
+			compare.push(itemId)
+			localStorage.setItem('compareItems', JSON.stringify(compare))
+			node.classList.add('active')
+		} else {
+			compare = compare.filter(id => id != itemId)
+			localStorage.setItem('compareItems', JSON.stringify(compare))
+			node.classList.remove('active')
+		}
+
+		compareCount()
 	},
 }
 document.addEventListener("click", function (e) {
@@ -2025,6 +1819,159 @@ $(document).ready(() => {
 		.map(i => i.classList.add('is-active'))
 })
 
-// just an end of a file
+function closeModal(...args) {
+	popup_close(...args)
+}
+
+function openModal(...args) {
+	popup_open(...args)
+}
 
 
+function printBasket() {
+	var basket = document.querySelector('.modal-basket')
+	var mywindow = window.open('', 'PRINT');
+
+	mywindow.document.write(
+		`<html>
+				<head>
+					${document.head.innerHTML}
+					<link href="/local/templates/main/css/style.css" type="text/css"  rel="stylesheet" />
+				</head>
+				<body>
+					${basket.outerHTML}
+				</body>
+				<script>
+					// document.addEventListener('DOMContentLoaded', () => {
+						print()
+						document.close()
+						close()
+					// })
+				</script>
+			</html>`
+	)
+	var innerModal = mywindow.document.querySelector('.modal-basket')
+	innerModal.classList.add('_active')
+	innerModal.querySelector('.modal-basket__print')?.remove()
+	innerModal.querySelector('.modal-basket__order')?.remove()
+	mywindow.document.title = "Электрум, моя корзина"
+	mywindow.focus(); // necessary for IE >= 10*/
+
+	return true;
+}
+
+document.addEventListener("click", function (e) {
+	if (e.target.closest('.js-sidebar-catalog-close') || !e.target.closest('.sidebar-catalog, .js-open-sidebar-catalog, .header__icon') && document.querySelector('.sidebar-catalog-open')) {
+		closeCatalog()
+	}
+	// открыть модалку каталога
+	if (bodyLockStatus && e.target.closest('.js-open-sidebar-catalog')) {
+		e.preventDefault()
+		document.querySelector('.sidebar-catalog-open') ? closeCatalog() : openCatalog()
+	}
+});
+
+function openCatalog() {
+	bodyLock();
+	document.documentElement.classList.add("sidebar-catalog-open");
+	if (window.matchMedia("(min-width: 991.98px)").matches && !isMobile.any()) {
+		document.addEventListener("mouseover", sidebarCatalogActions);
+		document.removeEventListener("click", sidebarCatalogActions);
+	} else {
+		document.addEventListener("click", sidebarCatalogActions);
+		document.removeEventListener("mouseover", sidebarCatalogActions);
+	}
+}
+
+function closeCatalog() {
+	bodyUnlock();
+	document.documentElement.classList.remove("sidebar-catalog-open", "sidebar-sub-catalog-open");
+}
+//#region Вспомогательные модули блокировки прокрутки и скочка ============================
+let bodyLockStatus = true;
+let bodyLockToggle = (delay = 500) => {
+	if (document.documentElement.classList.contains('lock')) {
+		bodyUnlock(delay);
+	} else {
+		bodyLock(delay);
+	}
+}
+let bodyUnlock = (delay = 500) => {
+	let body = document.querySelector("body");
+	if (bodyLockStatus) {
+		let lock_padding = document.querySelectorAll("[data-lp]");
+		setTimeout(() => {
+			for (let index = 0; index < lock_padding.length; index++) {
+				const el = lock_padding[index];
+				el.style.paddingRight = '0px';
+			}
+			body.style.paddingRight = '0px';
+			document.documentElement.classList.remove("lock");
+		}, delay);
+		bodyLockStatus = false;
+		setTimeout(function () {
+			bodyLockStatus = true;
+		}, delay);
+	}
+}
+let bodyLock = (delay = 500) => {
+	let body = document.querySelector("body");
+	if (bodyLockStatus) {
+		let lock_padding = document.querySelectorAll("[data-lp]");
+		for (let index = 0; index < lock_padding.length; index++) {
+			const el = lock_padding[index];
+			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		}
+		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		document.documentElement.classList.add("lock");
+
+		bodyLockStatus = false;
+		setTimeout(function () {
+			bodyLockStatus = true;
+		}, delay);
+	}
+}
+//#endregion
+
+//#region Открыть/закрыть боковой каталог + Открытие закрытие подкатегорий в каталоге
+
+function sidebarCatalogActions(e) {
+	if (e.target.closest('[data-parent]')) {
+		const targetElement = e.target.closest('[data-parent]');
+		const subMenuId = targetElement.closest('[data-parent]').dataset.parent ? targetElement.closest('[data-parent]').dataset.parent : null;
+		const subMenu = document.querySelector(`[data-submenu="${subMenuId}"]`);
+		if (subMenu) {
+			const activeLink = document.querySelector('._sub-menu-active');
+			const activeBlock = document.querySelector('._sub-menu-open');
+
+
+			if (activeLink && activeLink !== targetElement) {
+				activeLink.classList.remove('_sub-menu-active');
+				activeBlock.classList.remove('_sub-menu-open');
+				document.documentElement.classList.remove('sidebar-sub-catalog-open');
+			}
+			document.documentElement.classList.add('sidebar-sub-catalog-open');
+			targetElement.classList.add('_sub-menu-active');
+			subMenu.classList.add('_sub-menu-open');
+			e.preventDefault();
+		} else {
+			const activeLink = document.querySelector('._sub-menu-active');
+			const activeBlock = document.querySelector('._sub-menu-open');
+
+
+			if (activeLink) {
+				activeLink.classList.remove('_sub-menu-active');
+				activeBlock.classList.remove('_sub-menu-open');
+				document.documentElement.classList.remove('sidebar-sub-catalog-open');
+			}
+		}
+	}
+	if (e.target.closest('.js-sidebar-catalog-back')) {
+		document.documentElement.classList.remove('sidebar-sub-catalog-open');
+		document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
+		document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
+		e.preventDefault();
+	}
+}
+
+//#endregion
