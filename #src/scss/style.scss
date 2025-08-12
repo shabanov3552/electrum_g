@@ -804,3 +804,21 @@ html *::-webkit-scrollbar-thumb {
 @import "cookies";
 @import "agreement";
 @import "b2b-lend";
+
+.form__error--request {
+	display: none;
+	padding-top: 5px;
+	padding-left: 20px;
+}
+
+.chek__wrap {
+	display: flex;
+}
+
+.chek__wrap--policy {
+	align-items: center;
+}
+
+.is-error+.form__error--request {
+	display: block;
+}

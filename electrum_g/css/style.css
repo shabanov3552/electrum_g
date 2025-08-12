@@ -10400,6 +10400,9 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .request #bx-soa-orderSave .checkbox {
@@ -10410,10 +10413,10 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 355px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .request #bx-soa-orderSave .btn {
@@ -10478,12 +10481,27 @@ html._touch .menu__list > .menu__link_dropdown._active .menu__sub-list {
 .request #bx-soa-orderSave .data-span__link {
   text-decoration: underline;
   cursor: pointer;
+  color: inherit;
+}
+
+.request #bx-soa-orderSave .data-span__link:hover {
+  text-decoration: none;
 }
 
 .request #bx-soa-orderSave .chek__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.request #bx-soa-orderSave .is-error .data-span {
+  color: #eb5757;
 }
 
 .request #bx-soa-basket .bx-soa-item-title a {
@@ -13281,6 +13299,28 @@ div.search-result__empty.empty {
   font-size: 12px;
   line-height: 150%;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.form__error--request {
+  display: none;
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.chek__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chek__wrap--policy {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.is-error + .form__error--request {
+  display: block;
 }
 
 @media (min-width: 479.98px) {
@@ -16607,6 +16647,13 @@ div.search-result__empty.empty {
   }
 }
 
+@media (max-width: 768.98px) {
+  .cookie-modal {
+    bottom: 70px;
+    z-index: 10151;
+  }
+}
+
 @media (max-width: 767.98px) {
   .wrapper {
     padding-left: 0;
@@ -19008,7 +19055,6 @@ div.search-result__empty.empty {
 @media (max-width: 399.98px) {
   .cookie-modal {
     width: 100%;
-    bottom: 0;
     padding: 10px;
   }
 }

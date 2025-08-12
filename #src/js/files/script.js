@@ -761,3 +761,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+	let buttonModal = document.querySelectorAll(".CookieButton");
+
+	buttonModal.forEach(element => {
+		element.addEventListener("click", (e) => {
+			$.ajax({
+				url: '/local/ajax/cookie.php',
+				method: 'post',
+				data: {},
+				success: function (data) {
+					let cookie = document.querySelector(".CookieModal");
+					console.log(cookie);
+					cookie.style.display = "none";
+
+				}
+			});
+		});
+
+	})
+})

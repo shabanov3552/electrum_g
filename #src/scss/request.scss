@@ -472,6 +472,7 @@
 
 	#bx-soa-orderSave {
 		display: flex;
+		align-items: flex-start;
 
 		@media (max-width: 1280px) {
 			padding: 30px 0 10px 0;
@@ -481,8 +482,7 @@
 			order: 2;
 			margin: 0px 0px 0px 30px;
 			display: flex;
-			align-items: center;
-			max-width: 355px;
+			flex-direction: column;
 
 			@media (max-width: 1280px) {
 				margin: 0;
@@ -545,10 +545,24 @@
 		.data-span__link {
 			text-decoration: underline;
 			cursor: pointer;
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
 		}
 
 		.chek__label {
 			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+
+		.is-error {
+			.data-span {
+				color: #eb5757;
+			}
 		}
 	}
 

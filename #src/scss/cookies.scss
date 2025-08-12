@@ -8,6 +8,11 @@
    padding: 15px 17px;
    z-index: 1000;
    width: max-content;
+
+   @media (max-width: 768.98px) {
+      bottom: 70px;
+      z-index: 10151;
+   }
 }
 
 .cookie-modal__text {
@@ -71,7 +76,6 @@
 @media (max-width: 399.98px) {
    .cookie-modal {
       width: 100%;
-      bottom: 0;
       padding: 10px;
    }
 }
