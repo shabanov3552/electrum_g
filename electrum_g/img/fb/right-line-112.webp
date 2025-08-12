@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="412px" height="500px" viewBox="0 0 412 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Баннер-на-главную" transform="translate(-630.000000, -85.000000)" fill="#409AFF" fill-rule="nonzero">
+            <path d="M1022,85 C1033.04569,85 1042,93.954305 1042,105 L1042,564.74231 C1042,575.788005 1033.04569,584.74231 1022,584.74231 L630.093734,584.742 L630.093734,540.742 L998,540.74231 L998,129 L799.327734,129 L799.327734,85 L1022,85 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

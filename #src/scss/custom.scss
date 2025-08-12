@@ -105,7 +105,8 @@
 .is-success .success-text,
 .is-loading .loading-text,
 .is-error .error-text {
-   display: initial;
+   display: block;
+   margin-top: 8px;
 }
 
 .container-smal-img {
@@ -299,6 +300,28 @@
 }
 
 .card-modal__favorites.active svg {
+   display: none;
+}
+
+.card-modal__compare.active {
+   width: 18px;
+   height: 17px;
+   margin: 0px 0px 20px 0px;
+   position: relative;
+}
+
+.card-modal__compare.active::before {
+   content: "";
+   display: block;
+   width: 18px;
+   height: 16px;
+   background: url(../img/icons/icon_delete.svg) top left no-repeat;
+   background-size: contain;
+   position: absolute;
+   left: 0px;
+}
+
+.card-modal__compare.active svg {
    display: none;
 }
 

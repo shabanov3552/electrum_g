@@ -99,12 +99,17 @@
 		&:first-child {
 			height: 332px;
 
+
 			@media (max-width: 1280px) {
 				height: 323px;
 			}
 
 			@media (max-width: 1200px) {
 				height: 260px;
+			}
+
+			@media (max-width: $md3+px) {
+				opacity: 0;
 			}
 		}
 
@@ -220,6 +225,10 @@
 		-webkit-line-clamp: 4;
 		-webkit-box-orient: vertical;
 		display: -webkit-box;
+
+		a {
+			color: #000;
+		}
 
 		@media (max-width: 1200px) {
 			order: 3;

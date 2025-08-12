@@ -140,12 +140,13 @@ if (document.querySelector('.slider-product__big')) {
 			nextEl: '.slider-product__next',
 			prevEl: '.slider-product__prev'
 		},
-		loop: true,
+		// loop: true,
 		thumbs: {
 			swiper: {
 				el: '.slider-product__nav',
 				slidesPerView: 3.3,
-				loop: true,
+				spaceBetween: 10,
+				// loop: true,
 				breakpoints: {
 					767.98: {
 						direction: "vertical",
@@ -156,29 +157,29 @@ if (document.querySelector('.slider-product__big')) {
 	});
 }
 
-if (document.querySelector('.compare__row')) {
-	new Swiper('.compare__row', {
-		speed: 800,
-		observer: true,
-		observeParents: true,
-		scrollbar: {
-			el: ".swiper-scrollbar",
-			draggable: true,
-		},
-		grabCursor: true,
-		breakpoints: {
-			320: {
-				slidesPerView: 2,
-			},
-			1280: {
-				slidesPerView: 2,
-			},
-			1540: {
-				slidesPerView: 3,
-			},
-		}
-	});
-}
+// if (document.querySelector('.compare__row')) {
+// 	new Swiper('.compare__row', {
+// 		speed: 800,
+// 		observer: true,
+// 		observeParents: true,
+// 		scrollbar: {
+// 			el: ".swiper-scrollbar",
+// 			draggable: true,
+// 		},
+// 		grabCursor: true,
+// 		breakpoints: {
+// 			320: {
+// 				slidesPerView: 2,
+// 			},
+// 			1280: {
+// 				slidesPerView: 2,
+// 			},
+// 			1540: {
+// 				slidesPerView: 3,
+// 			},
+// 		}
+// 	});
+// }
 
 if (document.querySelector('.certificates__slider')) {
 	new Swiper('.certificates__slider', {
@@ -208,3 +209,45 @@ if (document.querySelector('.certificates__slider')) {
 		},
 	});
 }
+
+if (document.querySelector('.b2b-features__slider')) {
+
+	const sliders = document.querySelectorAll('.b2b-features__slider');
+	for (let i = 0; i < sliders.length; i++) {
+		const slider = sliders[i];
+		const className = `b2b-features__slider_${i + 1}`;
+		const slides = slider.querySelectorAll('.b2b-features__slide');
+		slider.classList.add(className);
+		if (slides.length > 1) {
+			slider.insertAdjacentHTML('afterend', `
+				<div class="b2b-features__slider-nav">
+					<button type="button" class="swiper-button swiper-button_prev">
+						<svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0.702148 18.4072L0.536133 18.5029L0.591797 18.5986L0.536133 18.6943L0.702148 18.7891L11.3291 37.1982L14 35.6562L4.15332 18.5986L14 1.54199L11.3291 0L0.702148 18.4072Z" fill="white" />
+						</svg>
+					</button>
+					<button type="button" class="swiper-button swiper-button_next">
+						<svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M13.2979 18.4072L13.4639 18.5029L13.4082 18.5986L13.4639 18.6943L13.2979 18.7891L2.6709 37.1982L0 35.6562L9.84668 18.5986L0 1.54199L2.6709 0L13.2979 18.4072Z" fill="white" />
+						</svg>
+					</button>
+				</div>
+			`)
+
+			// Создаем слайдер
+			new Swiper(`.${className}`, { // Указываем скласс нужного слайдера
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				speed: 300,
+
+				// Кнопки "влево/вправо"
+				navigation: {
+					prevEl: `.${className}+.b2b-features__slider-nav .swiper-button_prev`,
+					nextEl: `.${className}+.b2b-features__slider-nav .swiper-button_next`,
+				},
+			});
+		}
+	}
+}
+
+

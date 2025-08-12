@@ -5,7 +5,74 @@
 })
 
 <body>
+	<div class="cookie-modal">
+		<div class="cookie-modal__text">
+			Наш сайт использует файлы cookie. <a href="/agreement/#tab-0-2">Как это работает?</a>
+		</div>
+		<div class="cookie-modal__buttons">
+			<button type="button" class="cookie-modal__btn cookie-modal__btn_black">Согласен</button>
+			<button type="button" class="cookie-modal__btn cookie-modal__btn_white">Не согласен</button>
+		</div>
+	</div>
+	<div class="wholesale-block">
+		<img src="img/wholesale-block-icon.svg" alt="" class="wholesale-block__icon">
+		<div class="wholesale-block__text">
+			Для оптовых покупателей действуют специальные условия сотрудничества. Чтобы воспользоваться преимуществами оптовых закупок <a href=""><img src="img/wholesale-reg-icon.svg" alt=""> зарегистрируйтесь</a> или <a href="">авторизуйтесь</a> на нашем портале
+		</div>
+	</div>
 	@@include('_preloader.html',{})
+	<style>
+		.menu-open .wholesale-block {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.wholesale-block {
+			position: relative;
+			z-index: 10;
+			background: linear-gradient(90deg, #0058b3 0%, #48a4ff 100%);
+			color: #fff;
+			padding: 8px 10px 12px 10px;
+			display: grid;
+			grid-template-columns: 15px auto;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		.wholesale-block__icon {
+			width: 15px;
+			height: 20px;
+		}
+
+		.wholesale-block__text {
+			font-size: 10px;
+			font-weight: 600;
+			line-height: 125%;
+		}
+
+		.wholesale-block__text a {
+			color: #fff;
+			text-decoration: underline;
+		}
+
+		.wholesale-block__text a:hover {
+			text-decoration: none;
+		}
+
+		.wholesale-block__text a img {
+			width: 10px;
+			height: 12px;
+			display: inline-flex;
+			align-items: center;
+		}
+
+		@media (min-width:1000px) {
+			.wholesale-block__text {
+				font-size: 16px;
+				font-weight: 600;
+			}
+		}
+	</style>
 	<div class="wrapper">
 
 		@@include('_header.html',{})
@@ -13,17 +80,17 @@
 			<div class="first-block__container">
 				<div class="first-block__present">
 					<div class="first-block__lines">
-						<div class="first-block__pres-left-line"><img src="img/fb/left-line.svg" alt=""></div>
-						<div class="first-block__pres-center-line"><img src="img/fb/center-line.svg" alt=""></div>
-						<div class="first-block__pres-right-line"><img src="img/fb/right-line.svg" alt=""></div>
+						<!-- <div class="first-block__pres-left-line"><img src="img/fb/left-line.svg" alt=""></div> -->
+						<div class="first-block__pres-center-line"><img src="img/fb/center-line-new-112.svg" alt=""></div>
+						<div class="first-block__pres-right-line"><img src="img/fb/right-line-112.svg" alt=""></div>
 					</div>
 					<div class="first-block__big-lines">
-						<div class="first-block__pres-left-line"><img src="img/fb/left-line-new.svg" alt=""></div>
-						<div class="first-block__pres-center-line"><img src="img/fb/center-line-new.svg" alt=""></div>
-						<div class="first-block__pres-right-line"><img src="img/fb/right-line-new.svg" alt=""></div>
+						<!-- <div class="first-block__pres-left-line"><img src="img/fb/left-line-new.svg" alt=""></div> -->
+						<div class="first-block__pres-center-line"><img src="img/fb/center-line-new-112.svg" alt=""></div>
+						<div class="first-block__pres-right-line"><img src="img/fb/right-line-112.svg" alt=""></div>
 					</div>
-					<div class="first-block__pres-title">Кабель<br>и электро-<br>оборудование</div>
-					<div class="first-block__pres-subtitle">Для промышленных организаций и частных лиц</div>
+					<div class="first-block__pres-title">Присоединяйтесь<br>к нашему оптовому<br>B2B порталу для<br>юридических лиц<br><a href="https://b2b-tdel.pro">b2b-tdel.pro</a></div>
+					<div class="first-block__pres-subtitle">- персональные цены<br>- индивидуальные скидки<br>- документооборот (счета, УПД, акты сверки)<br>- личный менеджер<br>- история онлайн и офлайн заказов</div>
 				</div>
 				<div class="first-block__links">
 					<a href="" class="first-block__link-ibg"><img src="img/fb/first-block__image-2.png" alt=""></a>

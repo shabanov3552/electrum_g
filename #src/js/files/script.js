@@ -500,6 +500,10 @@ const globalClickHandlers = {
 		})
 	},
 	'js-addItem2Compare': async (node) => {
+		if (node.innerText === "Ошибка") {
+			return
+		}
+
 		var itemNode = node.closest('.js-item')
 		var itemId = parseInt(itemNode.dataset.id)
 
@@ -514,15 +518,27 @@ const globalClickHandlers = {
 
 		var action = checked ? "ADD_TO_COMPARE_LIST" : "DELETE_FROM_COMPARE_LIST"
 
-		await $.post({
+		var response = await $.post({
 			'url': `/catalog/compare/?action=${action}&id=${itemId}&ajax_action=Y`,
 			data,
 		})
 
+		// checked = response.STATUS === "OK" ? checked : !checked;
 
+
+		if (response.STATUS === "ERROR") {
+			if (response.MESSAGE === "Товар не найден") {
+				if (node !== null) {
+					node.innerText = "Ошибка";
+					node.classList.add('active')
+					node.classList.remove('js-compare')
+					return
+				}
+			}
+		}
 
 		BX.onCustomEvent('OnCompareChange')
-		var compare = JSON.parse(localStorage.getItem('compareItems'));
+		var compare = JSON.parse(localStorage.getItem('compareItems')) || [];
 		if (checked) {
 			compare.push(itemId)
 			localStorage.setItem('compareItems', JSON.stringify(compare))
@@ -609,12 +625,15 @@ function printBasket() {
 				</script>
 			</html>`
 	)
-	var innerModal = mywindow.document.querySelector('.modal-basket')
-	innerModal.classList.add('_active')
-	innerModal.querySelector('.modal-basket__print')?.remove()
-	innerModal.querySelector('.modal-basket__order')?.remove()
-	mywindow.document.title = "Электрум, моя корзина"
-	mywindow.focus(); // necessary for IE >= 10*/
+	var innerModal = mywindow.document.querySelector('.modal-basket');
+	if (innerModal) {
+
+		innerModal.classList.add('_active')
+		innerModal.querySelector('.modal-basket__print')?.remove()
+		innerModal.querySelector('.modal-basket__order')?.remove()
+		mywindow.document.title = "Электрум, моя корзина"
+		mywindow.focus(); // necessary for IE >= 10*/
+	}
 
 	return true;
 }
@@ -734,3 +753,11 @@ function sidebarCatalogActions(e) {
 }
 
 //#endregion
+
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.popup').forEach(popup => {
+		if (!popup.closest('.header')) {
+			document.querySelector('.header').append(popup);
+		}
+	})
+})

@@ -30,17 +30,14 @@
 	}
 
 	&__image {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		display: block;
 		margin: 0px 0px 10px 0px;
 		height: 220px;
-		flex: 0 0 auto;
 
 		img {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
+			object-fit: contain;
 		}
 	}
 
@@ -607,7 +604,7 @@ html._touch .btn3 {
 
 	&__item {
 		font-weight: 700;
-		font-size: 24px;
+		font-size: 17px;
 		line-height: 24px;
 		color: #828282;
 		cursor: pointer;
@@ -1024,4 +1021,33 @@ html._touch .btn3 {
 	overflow-y: scroll;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+}
+
+[data-showmore] {}
+
+[data-showmore-content] {}
+
+[data-showmore-button] {
+	font-size: 16px;
+	margin-top: 15px;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+
+	span {
+		&:last-child {
+			display: none;
+		}
+
+		._showmore-active & {
+			display: none;
+
+			&:last-child {
+				display: block;
+			}
+		}
+	}
 }

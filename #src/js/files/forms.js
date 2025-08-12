@@ -197,10 +197,15 @@ function inputs_init(inputs) {
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
 					input.classList.add('_mask');
-					Inputmask("+7(999) 999 9999", {
+					Inputmask("+7(x99) 999 9999", {
 						//"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,
+						definitions: {
+							x: {
+								validator: '[0-79-9]'
+							}
+						},
 						onincomplete: function () {
 							input_clear_mask(input, input_g_value);
 						}
@@ -298,3 +303,9 @@ if (quantityButtons.length > 0) {
 	}
 }
 
+document.addEventListener("click", function (e) {
+	if (e.target.closest('.input-clear')) {
+		let input = e.target.closest('.input-clear').parentElement.querySelector('input')
+		input.value = '';
+	}
+});

@@ -1,0 +1,77 @@
+.cookie-modal {
+   box-shadow: 0 6px 21px 0 rgba(0, 0, 0, 0.5);
+   background: #fff;
+   position: fixed;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 20px;
+   padding: 15px 17px;
+   z-index: 1000;
+   width: max-content;
+}
+
+.cookie-modal__text {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 137%;
+   color: #000;
+   margin-bottom: 13px;
+}
+
+.cookie-modal__text a {
+   color: #409aff;
+   display: block;
+}
+
+.cookie-modal__text a:hover {
+   text-decoration: underline;
+}
+
+.cookie-modal__buttons {
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   gap: 14px;
+}
+
+.cookie-modal__btn {
+   font-weight: 400;
+   font-size: 16px;
+   text-align: center;
+   color: #fff;
+   padding: 14px 24px 12px 24px;
+   border: 1px solid transparent;
+   color: #fff;
+   background: #000;
+   transition: all 0.3s ease 0s;
+}
+
+.cookie-modal__btn_black {
+   background: #000;
+   color: #fff;
+}
+
+.cookie-modal__btn_black:hover {
+   color: #000;
+   background: #fff;
+   border-color: #000;
+}
+
+.cookie-modal__btn_white {
+   background: #fff;
+   color: #000;
+   border-color: #979797;
+}
+
+.cookie-modal__btn_white:hover {
+   background: #000;
+   color: #fff;
+   border-color: #000;
+}
+
+@media (max-width: 399.98px) {
+   .cookie-modal {
+      width: 100%;
+      bottom: 0;
+      padding: 10px;
+   }
+}

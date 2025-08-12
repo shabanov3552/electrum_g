@@ -36,10 +36,8 @@
 			gap: 30px;
 		}
 
-		@media (min-width: 1100px) {
-			// transition: all 1s ease 1.6s;
-			// transform: translate(0px, 100px);
-			// opacity: 0;
+		@media (max-width: 374.98px) {
+			gap: 10px;
 		}
 	}
 
@@ -88,6 +86,9 @@
 			}
 
 			&._active {
+				top: 11px;
+				position: fixed;
+
 				path {
 					fill: #004ea6;
 				}
@@ -818,6 +819,16 @@ html._touch .menu__list>.menu__link_dropdown._active .menu__sub-list {
 				100% {
 					clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
 				}
+			}
+		}
+
+		// .catalog-btn__logo_white
+
+		&_white {
+			display: none;
+
+			.sidebar-catalog-open & {
+				display: block;
 			}
 		}
 	}
